@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: f61f82bfde85d72428fd39eabd320844
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7205559527514955470
+    second: laser1_8_0
+  - first:
+      213: -4560849194261006140
+    second: laser1_8_1
+  - first:
+      213: 8992896001323865960
+    second: laser1_8_2
+  - first:
+      213: 6250710977752403996
+    second: laser1_8_3
+  - first:
+      213: -1326351251169202761
+    second: laser1_8_4
+  - first:
+      213: -1648365154340310185
+    second: laser1_8_5
+  - first:
+      213: 4816156422160291356
+    second: laser1_8_6
+  - first:
+      213: 7984232019996515496
+    second: laser1_8_7
+  - first:
+      213: 4367603619450252613
+    second: laser1_8_0
+  - first:
+      213: 2893973021273088014
+    second: laser1_8_1
+  - first:
+      213: -5209876007116471144
+    second: laser1_8_2
+  - first:
+      213: -907496983663593322
+    second: laser1_8_3
+  - first:
+      213: -7320194364081724895
+    second: laser1_8_4
+  - first:
+      213: -2863642239048235963
+    second: laser1_8_5
+  - first:
+      213: 1440337751351340228
+    second: laser1_8_6
+  - first:
+      213: 6667639095250203315
+    second: laser1_8_7
+  - first:
+      213: 5865275385197703403
+    second: laser1_8_8
+  - first:
+      213: 608157197780046155
+    second: laser1_8_9
+  - first:
+      213: -1116296963998619783
+    second: laser1_8_10
+  - first:
+      213: -169444429011349059
+    second: laser1_8_11
+  - first:
+      213: -9166760159382525757
+    second: laser1_8_12
+  - first:
+      213: 6762536706087250622
+    second: laser1_8_13
+  - first:
+      213: -4820009884447778248
+    second: laser1_8_14
+  - first:
+      213: 923444558087791379
+    second: laser1_8_15
+  - first:
+      213: 8289102341363500217
+    second: laser1_8_8
+  - first:
+      213: 3813878657143133796
+    second: laser1_8_9
+  - first:
+      213: -296552687820409961
+    second: laser1_8_10
+  - first:
+      213: -5950677735140816076
+    second: laser1_8_11
+  - first:
+      213: -2937537719016026801
+    second: laser1_8_12
+  - first:
+      213: 2545342932078310583
+    second: laser1_8_13
+  - first:
+      213: -5215569039463606241
+    second: laser1_8_14
+  - first:
+      213: 1255521576753245093
+    second: laser1_8_15
+  - first:
+      213: 7315843572318504010
+    second: laser1_8_16
+  - first:
+      213: -526310354693378242
+    second: laser1_8_17
+  - first:
+      213: 4236621137688279861
+    second: laser1_8_18
+  - first:
+      213: 7994808695564330776
+    second: laser1_8_19
+  - first:
+      213: -4572673604580375755
+    second: laser1_8_20
+  - first:
+      213: -8782154689869669043
+    second: laser1_8_21
+  - first:
+      213: -7885454528244640136
+    second: laser1_8_22
+  - first:
+      213: -9109572428476858435
+    second: laser1_8_23
+  - first:
+      213: 4305845691135581303
+    second: laser1_8_24
+  - first:
+      213: 2947316112514324437
+    second: laser1_8_25
+  - first:
+      213: 447785256338691343
+    second: laser1_8_26
+  - first:
+      213: -6304264587284858152
+    second: laser1_8_27
+  - first:
+      213: -2156035145275450638
+    second: laser1_8_28
+  - first:
+      213: 3823647012541025135
+    second: laser1_8_29
+  - first:
+      213: 8471044640847034361
+    second: laser1_8_30
+  - first:
+      213: -7742864078130367468
+    second: laser1_8_31
+  - first:
+      213: 3068073866327218609
+    second: laser1_8_32
+  - first:
+      213: -7767227664390528023
+    second: laser1_8_33
+  - first:
+      213: 1547373557842597058
+    second: laser1_8_34
+  - first:
+      213: -2299750099775641832
+    second: laser1_8_35
+  - first:
+      213: -8115519168741175424
+    second: laser1_8_36
+  - first:
+      213: 8218392331521016145
+    second: laser1_8_37
+  - first:
+      213: 7027346292325521204
+    second: laser1_8_38
+  - first:
+      213: -210479722348872804
+    second: laser1_8_39
+  - first:
+      213: 5858033012123854060
+    second: laser1_8_40
+  - first:
+      213: 2755794719403844513
+    second: laser1_8_41
+  - first:
+      213: -8134414705390552388
+    second: laser1_8_42
+  - first:
+      213: -5406010500571431791
+    second: laser1_8_43
+  - first:
+      213: 2166139169938675306
+    second: laser1_8_44
+  - first:
+      213: 8949675291408988098
+    second: laser1_8_45
+  - first:
+      213: -8241880654968776389
+    second: laser1_8_46
+  - first:
+      213: -5643388694570061380
+    second: laser1_8_47
+  - first:
+      213: 5348880139650596321
+    second: laser1_8_48
+  - first:
+      213: -2953390547979519500
+    second: laser1_8_49
+  - first:
+      213: -1854704205837815702
+    second: laser1_8_50
+  - first:
+      213: 7338872178729486754
+    second: laser1_8_51
+  - first:
+      213: -9134031991699828204
+    second: laser1_8_52
+  - first:
+      213: -4849262935244483994
+    second: laser1_8_53
+  - first:
+      213: -6519073011941557960
+    second: laser1_8_54
+  - first:
+      213: -6441102297107643892
+    second: laser1_8_55
+  - first:
+      213: 3312281042988059823
+    second: laser1_8_56
+  - first:
+      213: -375277124197004593
+    second: laser1_8_57
+  - first:
+      213: -5901451719049414309
+    second: laser1_8_58
+  - first:
+      213: -6571261049462077093
+    second: laser1_8_59
+  - first:
+      213: -3896742200712093635
+    second: laser1_8_60
+  - first:
+      213: -3499104736023007954
+    second: laser1_8_61
+  - first:
+      213: -3911235929105447905
+    second: laser1_8_62
+  - first:
+      213: -762651379251545027
+    second: laser1_8_63
+  - first:
+      213: 6246302479009614272
+    second: laser1_8_64
+  - first:
+      213: 1352195010695648083
+    second: laser1_8_65
+  - first:
+      213: 5993813511307337414
+    second: laser1_8_66
+  - first:
+      213: -6437458419156202785
+    second: laser1_8_67
+  - first:
+      213: -6563785046403550581
+    second: laser1_8_68
+  - first:
+      213: -1047047394344817563
+    second: laser1_8_69
+  - first:
+      213: 2051929286998551362
+    second: laser1_8_70
+  - first:
+      213: 1188507132590052479
+    second: laser1_8_71
+  - first:
+      213: -4703611028339866601
+    second: laser1_8_72
+  - first:
+      213: 2008687799785861523
+    second: laser1_8_73
+  - first:
+      213: -3731172668032961489
+    second: laser1_8_74
+  - first:
+      213: 252159663964289401
+    second: laser1_8_75
+  - first:
+      213: 3905658957190269224
+    second: laser1_8_76
+  - first:
+      213: 653725620922064249
+    second: laser1_8_77
+  - first:
+      213: -8970400020683224977
+    second: laser1_8_78
+  - first:
+      213: -3220865526769906444
+    second: laser1_8_79
+  - first:
+      213: 5812970686039265116
+    second: laser1_8_80
+  - first:
+      213: 5783861419965630931
+    second: laser1_8_81
+  - first:
+      213: 2621965342364365669
+    second: laser1_8_82
+  - first:
+      213: -1324104917280456585
+    second: laser1_8_83
+  - first:
+      213: -6699940727285766507
+    second: laser1_8_84
+  - first:
+      213: 348525986310199042
+    second: laser1_8_85
+  - first:
+      213: 4593993446812477148
+    second: laser1_8_86
+  - first:
+      213: -2638164065424084681
+    second: laser1_8_87
+  - first:
+      213: -7470031458106976260
+    second: laser1_8_88
+  - first:
+      213: 2874344634172404544
+    second: laser1_8_89
+  - first:
+      213: -3362114619604334476
+    second: laser1_8_90
+  - first:
+      213: -3031867918331970361
+    second: laser1_8_91
+  - first:
+      213: -6596802503777346461
+    second: laser1_8_92
+  - first:
+      213: -8625783580929739027
+    second: laser1_8_93
+  - first:
+      213: 9083931301662736461
+    second: laser1_8_94
+  - first:
+      213: -80016029937255281
+    second: laser1_8_95
+  - first:
+      213: -5144437726410508117
+    second: laser1_8_96
+  - first:
+      213: -537565357609283564
+    second: laser1_8_97
+  - first:
+      213: 8470556541554894018
+    second: laser1_8_98
+  - first:
+      213: 3834894443849607554
+    second: laser1_8_99
+  - first:
+      213: -5804521269874382934
+    second: laser1_8_100
+  - first:
+      213: 116791346497142685
+    second: laser1_8_101
+  - first:
+      213: 1097412705609898768
+    second: laser1_8_102
+  - first:
+      213: 2341886083911933915
+    second: laser1_8_103
+  - first:
+      213: 2063549679759717548
+    second: laser1_8_104
+  - first:
+      213: -7591662450760211302
+    second: laser1_8_105
+  - first:
+      213: -3100685522871090002
+    second: laser1_8_106
+  - first:
+      213: 6288703459172539384
+    second: laser1_8_107
+  - first:
+      213: 6819500446453045993
+    second: laser1_8_108
+  - first:
+      213: 2272320661942943453
+    second: laser1_8_109
+  - first:
+      213: -7544816697585655994
+    second: laser1_8_110
+  - first:
+      213: 6893458813593111056
+    second: laser1_8_111
+  - first:
+      213: -2644866097954177023
+    second: laser1_8_112
+  - first:
+      213: 5212499591638938586
+    second: laser1_8_113
+  - first:
+      213: -7243610173588939327
+    second: laser1_8_114
+  - first:
+      213: -4005959346024869412
+    second: laser1_8_115
+  - first:
+      213: -2903228803968817338
+    second: laser1_8_116
+  - first:
+      213: -7963987125606297386
+    second: laser1_8_117
+  - first:
+      213: -1286393519007177885
+    second: laser1_8_118
+  - first:
+      213: -4416347163309757642
+    second: laser1_8_119
+  - first:
+      213: 6497717418644722710
+    second: laser1_8_120
+  - first:
+      213: -3661902924518551401
+    second: laser1_8_121
+  - first:
+      213: -6753197678545371099
+    second: laser1_8_122
+  - first:
+      213: 6660637395012020929
+    second: laser1_8_123
+  - first:
+      213: -7039183282275170160
+    second: laser1_8_124
+  - first:
+      213: -3924514828929697220
+    second: laser1_8_125
+  - first:
+      213: 7520978159697591342
+    second: laser1_8_126
+  - first:
+      213: 9210556857477453718
+    second: laser1_8_127
+  - first:
+      213: 7930488227706544931
+    second: laser1_8_128
+  - first:
+      213: 7847002947004773544
+    second: laser1_8_129
+  - first:
+      213: 5565903535701891767
+    second: laser1_8_130
+  - first:
+      213: -2778165905110529100
+    second: laser1_8_131
+  - first:
+      213: -1972042001796577325
+    second: laser1_8_132
+  - first:
+      213: -5607254476912396514
+    second: laser1_8_133
+  - first:
+      213: -1890799395050116099
+    second: laser1_8_134
+  - first:
+      213: -3777264587637061122
+    second: laser1_8_135
+  - first:
+      213: -1383811654771749979
+    second: laser1_8_136
+  - first:
+      213: -4446843073944908727
+    second: laser1_8_137
+  - first:
+      213: 5746410574182544475
+    second: laser1_8_138
+  - first:
+      213: 7354918752382925817
+    second: laser1_8_139
+  - first:
+      213: 567477690148452032
+    second: laser1_8_140
+  - first:
+      213: 549601412320234421
+    second: laser1_8_141
+  - first:
+      213: -2501052871481505836
+    second: laser1_8_142
+  - first:
+      213: 4360135748923673042
+    second: laser1_8_143
+  - first:
+      213: 9036254465051439792
+    second: laser1_8_144
+  - first:
+      213: 7017706619190135015
+    second: laser1_8_145
+  - first:
+      213: -237417798673643066
+    second: laser1_8_146
+  - first:
+      213: -2861200457374332653
+    second: laser1_8_147
+  - first:
+      213: 305681753342707904
+    second: laser1_8_148
+  - first:
+      213: -3461918953805642826
+    second: laser1_8_149
+  - first:
+      213: -8023472246211734365
+    second: laser1_8_150
+  - first:
+      213: 9028881156560263956
+    second: laser1_8_151
+  - first:
+      213: 3698207104042172841
+    second: laser1_8_152
+  - first:
+      213: -8601438473569939757
+    second: laser1_8_153
+  - first:
+      213: -3791713004555694353
+    second: laser1_8_154
+  - first:
+      213: 3068976598694746504
+    second: laser1_8_155
+  - first:
+      213: 7445574212315823191
+    second: laser1_8_156
+  - first:
+      213: 6474779799265058587
+    second: laser1_8_157
+  - first:
+      213: -8566821946413568154
+    second: laser1_8_158
+  - first:
+      213: -6101665408367130121
+    second: laser1_8_159
+  - first:
+      213: -7992271424949925552
+    second: laser1_8_160
+  - first:
+      213: -5150553287457046463
+    second: laser1_8_161
+  - first:
+      213: -8106852835369653558
+    second: laser1_8_162
+  - first:
+      213: 5567308925240984954
+    second: laser1_8_163
+  - first:
+      213: -450464950618389470
+    second: laser1_8_164
+  - first:
+      213: -8153094722684836063
+    second: laser1_8_165
+  - first:
+      213: -8002675190361825591
+    second: laser1_8_166
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: laser1_8_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dea01f958dc9c30800000000000000
+      internalID: 4367603619450252613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00eb824125792820800000000000000
+      internalID: 2893973021273088014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8940ef7ef5dc2b7b0800000000000000
+      internalID: -5209876007116471144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6983efd2d4ce763f0800000000000000
+      internalID: -907496983663593322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122a71a8202796a90800000000000000
+      internalID: -7320194364081724895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544c9b94e8c4248d0800000000000000
+      internalID: -2863642239048235963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cca1e9bd8b1df310800000000000000
+      internalID: 1440337751351340228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b235e23e66388c50800000000000000
+      internalID: 6667639095250203315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b484d379aec80370800000000000000
+      internalID: 8289102341363500217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466d57f8e6e9de430800000000000000
+      internalID: 3813878657143133796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793f641d6ee62ebf0800000000000000
+      internalID: -296552687820409961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b0b10c022fa6da0800000000000000
+      internalID: -5950677735140816076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d0dbf1205cb37d0800000000000000
+      internalID: -2937537719016026801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4341239efd25320800000000000000
+      internalID: 2545342932078310583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f181f3587939e97b0800000000000000
+      internalID: -5215569039463606241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser1_8_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2048
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab2736d8328c6110800000000000000
+      internalID: 1255521576753245093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 96166fdfa1683414aa48470a626eea1a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
