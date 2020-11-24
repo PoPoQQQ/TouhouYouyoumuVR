@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NonCard2 : MonoBehaviour
 {
-
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -14,12 +13,14 @@ public class NonCard2 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 0f, 100f));
         GetComponent<Floating>().enabled = false;
         yield return new WaitForSeconds(0.5f);
+        GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(0);
         
         yield return new WaitUntil(() => GameObject.Find("Player").GetComponentInChildren<AudioManager>().BGMTime() > 89.2f);
-        GetComponent<SaigyoujiYuyuko>().Oogi();
+        GetComponent<SaigyoujiYuyuko>().Oogi(true);
         yield return new WaitForSeconds(0.1f);
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.06f, 0.2f);
+        //GetComponent<SaigyoujiYuyuko>().MagicCircle(new Color(0.906f, 0.679f, 0.734f, 0.65f));
         yield return new WaitForSeconds(0.4f);
         GetComponent<Floating>().enabled = true;
         yield return new WaitForSeconds(1f);

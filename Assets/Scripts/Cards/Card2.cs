@@ -10,8 +10,9 @@ public class Card2 : MonoBehaviour
     IEnumerator CardCoroutine()
     {
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.5f, 0.5f);
-        GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 10f, 100f));
+        GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 0f, 100f));
         yield return new WaitForSeconds(0.5f);
+        GetComponent<SaigyoujiYuyuko>().Ring(true);
         GetComponent<CardEffectManager>().StartCard("亡舞 「生者必滅之理 -死蝶-」");
         GetComponent<BackgroundManager>().SetBackground(1);
         yield return new WaitForSeconds(3f);
@@ -23,19 +24,19 @@ public class Card2 : MonoBehaviour
 
         StartCoroutine(SwitchingCoroutine());
         StartCoroutine(RotatingCoroutine());
-        StartCoroutine(CircleCoroutine(blueOodamaDanmaku));
-        StartCoroutine(SkyButterflyCoroutine(skyButterflyDanmaku));
-        StartCoroutine(BlueButterflyCoroutine(blueButterflyDanmaku));
-        StartCoroutine(PurpleButterflyCoroutine(purpleButterflyDanmaku));
+        Coroutine c1 = StartCoroutine(CircleCoroutine(blueOodamaDanmaku));
+        Coroutine c2 = StartCoroutine(SkyButterflyCoroutine(skyButterflyDanmaku));
+        Coroutine c3 = StartCoroutine(BlueButterflyCoroutine(blueButterflyDanmaku));
+        Coroutine c4 = StartCoroutine(PurpleButterflyCoroutine(purpleButterflyDanmaku));
 
-        while(true)
-        {
-            yield return 0;
-        }
-        
-        yield return new WaitForSeconds(4f);
-        GetComponent<WhiteScreenManager>().Flash(Color.white, 0.5f, 0.5f);
-        GetComponent<NonCard2>().StartCard();
+        yield return new WaitForSeconds(42f);
+        StopCoroutine(c1);
+        StopCoroutine(c2);
+        StopCoroutine(c3);
+        StopCoroutine(c4);
+
+        yield return new WaitForSeconds(7f);
+        GetComponent<NonCard3>().StartCard();
         Destroy(this);
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 	public AudioClip BGM;
+    public AudioClip BGM2;
 	public AudioClip cardSE;
 
 	AudioSource bgm = null;
@@ -17,6 +18,21 @@ public class AudioManager : MonoBehaviour
     	bgm.volume = 1f;
     	bgm.Play();
 	}
+
+    public void StopBGM()
+    {
+        Destroy(bgm);
+        bgm = null;
+    }
+
+    public void PlayBGM2()
+    {
+        bgm = gameObject.AddComponent<AudioSource>();
+        bgm.clip = BGM2;
+        bgm.loop = true;
+        bgm.volume = 1f;
+        bgm.Play();
+    }
 
 	public float BGMTime()
 	{

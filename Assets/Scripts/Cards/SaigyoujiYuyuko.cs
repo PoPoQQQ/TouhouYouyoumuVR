@@ -6,6 +6,9 @@ public class SaigyoujiYuyuko : MonoBehaviour
 {
 	Transform player;
 
+    public GameObject oogi;
+    public GameObject ring;
+
     void Start()
     {
     	player = GameObject.Find("Player").transform;
@@ -39,9 +42,6 @@ public class SaigyoujiYuyuko : MonoBehaviour
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM();
 
         GetComponent<NonCard1>().StartCard();
-        //GetComponent<Card1>().StartCard();
-        //GetComponent<NonCard2>().StartCard();
-        //GetComponent<Card2>().StartCard();
         //StartCoroutine(TestingCard());
     }
 
@@ -77,17 +77,20 @@ public class SaigyoujiYuyuko : MonoBehaviour
         transform.position = target;
     }
 
-    public void Oogi()
-        => StartCoroutine(OogiCoroutine());
+    public void Oogi(bool enabled)
+    {
+        if(enabled)
+            StartCoroutine(OogiCoroutine());
+        else
+            oogi.transform.localScale = new Vector3(0f, 0f, 1);
+    }
 
     IEnumerator OogiCoroutine()
     {
-        Transform oogi = transform.GetChild(0);
-
         float duration = 0.1f;
         for(float t = 0; t < duration; t += Time.deltaTime)
         {
-            oogi.localScale = new Vector3(t / duration, t / duration * 0.2f, 1f);
+            oogi.transform.localScale = new Vector3(t / duration, t / duration * 0.2f, 1f);
             yield return 0;
         }
 
@@ -96,11 +99,14 @@ public class SaigyoujiYuyuko : MonoBehaviour
         duration = 0.3f;
         for(float t = 0; t < duration; t += Time.deltaTime)
         {
-            oogi.localScale = new Vector3(1f, 0.2f + t / duration * 0.8f, 1f);
+            oogi.transform.localScale = new Vector3(1f, 0.2f + t / duration * 0.8f, 1f);
             yield return 0;
         }
-        oogi.localScale = new Vector3(1f, 1f, 1f);
+        oogi.transform.localScale = new Vector3(1f, 1f, 1f);
     }
+
+    public void Ring(bool enabled)
+        => ring.SetActive(enabled);
 
     IEnumerator TestingCard()
     {

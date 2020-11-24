@@ -8,13 +8,19 @@ public class CardEffectManager : MonoBehaviour
 	public TextMesh[] textMeshes;
 	public GameObject cardName;
 	public SpriteRenderer cardNameFrame;
+    public GameObject words;
 
-    public void StartCard(string cardName)
+    public void StartCard(string cardName, bool last = false)
     {
     	float duration = 2.7f;
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayCardSE();
-    	StartCoroutine(YuyukoTachieMove(duration));
-    	StartCoroutine(YuyukoTachieFade(duration));
+        if(!last)
+        {
+            StartCoroutine(YuyukoTachieMove(duration));
+            StartCoroutine(YuyukoTachieFade(duration));
+        }
+        else
+            words.SetActive(false);
     	foreach(TextMesh textMesh in textMeshes)
     		textMesh.text = cardName;
     	StartCoroutine(CardNameAnimation());
@@ -108,5 +114,33 @@ public class CardEffectManager : MonoBehaviour
 	    	color.a = alpha;
 	    	cardNameFrame.color = color;
     	}
+    }
+
+    public void WordsAppear()
+        => StartCoroutine(WordsAppearCoroutine());
+
+    IEnumerator WordsAppearCoroutine()
+    {
+        float duration = 2f;
+        float initialX = 10f;
+
+        for(float t = 0; t < duration; t += Time.deltaTime)
+        {
+            Vector3 position = words.transform.position;
+            position.x = initialX * (1 - t / duration);
+            words.transform.position = position;
+            Color color = words.GetComponent<SpriteRenderer>().color;
+            color.a = t / duration;
+            words.GetComponent<SpriteRenderer>().color = color;
+            yield return 0;
+        }
+        {
+            Vector3 position = words.transform.position;
+            position.x = 0;
+            words.transform.position = position;
+            Color color = words.GetComponent<SpriteRenderer>().color;
+            color.a = 1;
+            words.GetComponent<SpriteRenderer>().color = color;
+        }
     }
 }

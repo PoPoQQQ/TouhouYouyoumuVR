@@ -12,6 +12,7 @@ public class Card1 : MonoBehaviour
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.5f, 0.5f);
         GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 10f, 100f));
         yield return new WaitForSeconds(0.5f);
+        GetComponent<SaigyoujiYuyuko>().Ring(true);
         GetComponent<CardEffectManager>().StartCard("亡郷 「亡我郷 -宿罪-」");
         GetComponent<BackgroundManager>().SetBackground(1);
         yield return new WaitForSeconds(3f);
