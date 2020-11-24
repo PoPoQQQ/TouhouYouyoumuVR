@@ -47,7 +47,7 @@
 
             float4 frag (v2f i) : COLOR
             {
-                float rate = sqrt(clamp(abs(i.viewSpacePosition.z) / _Far, 0, 1));
+                float rate = pow(clamp(abs(i.viewSpacePosition.z) / _Far, 0, 1), 1.5);
                 fixed4 texColor = tex2D(_MainTex, float2(1 - i.uv.x, i.uv.y)) * _Color;
                 return float4(texColor.rgb * texColor.a * (1 - rate)  + _FogColor.rgb * _FogColor.a * rate, texColor.a * (1 - rate) + _FogColor.a * rate);
             }

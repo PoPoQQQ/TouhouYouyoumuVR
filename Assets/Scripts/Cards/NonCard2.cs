@@ -17,10 +17,10 @@ public class NonCard2 : MonoBehaviour
         GetComponent<BackgroundManager>().SetBackground(0);
         
         yield return new WaitUntil(() => GameObject.Find("Player").GetComponentInChildren<AudioManager>().BGMTime() > 89.2f);
+        //yield return new WaitForSeconds(4f);
         GetComponent<SaigyoujiYuyuko>().Oogi(true);
         yield return new WaitForSeconds(0.1f);
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.06f, 0.2f);
-        //GetComponent<SaigyoujiYuyuko>().MagicCircle(new Color(0.906f, 0.679f, 0.734f, 0.65f));
         yield return new WaitForSeconds(0.4f);
         GetComponent<Floating>().enabled = true;
         yield return new WaitForSeconds(1f);

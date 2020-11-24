@@ -27,7 +27,7 @@ public class Card6 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().Ring(true);
         GetComponent<CardEffectManager>().StartCard("「反魂蝶 -参分咲-」", true);
         GetComponent<BackgroundManager>().SetBackground(1);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM2();
         yield return new WaitForSeconds(3f);
 

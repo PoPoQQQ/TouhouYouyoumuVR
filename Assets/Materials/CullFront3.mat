@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CullFront3
-  m_Shader: {fileID: 4800000, guid: 75dd64da49222e745ae05ad9602cd218, type: 3}
+  m_Shader: {fileID: 4800000, guid: e403354883031e84e829963b4d478faa, type: 3}
   m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -53,8 +53,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 9d1e9b6e51cfeb746bcccdc17a6fed74, type: 3}
-        m_Scale: {x: 2, y: 40}
-        m_Offset: {x: -0.01, y: 0.8807074}
+        m_Scale: {x: 2, y: 60}
+        m_Offset: {x: 0.64, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -84,6 +84,7 @@ Material:
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
     - _Exposure: 1
+    - _Far: 1300
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -114,11 +115,12 @@ Material:
     m_Colors:
     - _BackColor: {r: 1, g: 1, b: 1, a: 1}
     - _BackSpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 0.09433961, g: 0.043164823, b: 0.07637414, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 0, g: 0, b: 0, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _FogColor: {r: 0.20999467, g: 0.22012728, b: 0.31132078, a: 1}
     - _GroundColor: {r: 0.369, g: 0.349, b: 0.341, a: 1}
     - _HighlightColor: {r: 0.63, g: 0.52, b: 0.38, a: 0.66}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
