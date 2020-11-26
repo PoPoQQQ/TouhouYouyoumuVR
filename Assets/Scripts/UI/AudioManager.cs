@@ -40,7 +40,13 @@ public class AudioManager : MonoBehaviour
 			return -1;
 		return bgm.time;
 	}
-
+    public bool SetBGMTime(float time)
+    {
+        if (bgm == null)
+            return false;
+        bgm.time = time;
+        return true;
+    }
     public void PlayCardSE()
     	=> StartCoroutine(PlayCardSECoroutine());
 
