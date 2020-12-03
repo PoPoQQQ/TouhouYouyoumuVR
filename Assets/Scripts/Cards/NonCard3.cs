@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class NonCard3 : MonoBehaviour
 {
+    GameObject shroudObject;
+    GameObject skyKunaiDanmaku;
+    GameObject blueOodamaDanmaku;
+
+    void Start()
+    {
+        shroudObject = Resources.Load<GameObject>("Prefabs/Shroud");
+        skyKunaiDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyKunaiDanmaku");
+        blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
+    }
+
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -35,7 +46,6 @@ public class NonCard3 : MonoBehaviour
     }
     IEnumerator ReleaseShroud(Vector3 initialPosition)
     {
-        GameObject shroudObject = Resources.Load<GameObject>("Prefabs/Shroud");
         while (true)
         {
             GameObject shroud = Instantiate(shroudObject);
@@ -47,7 +57,7 @@ public class NonCard3 : MonoBehaviour
     }
     IEnumerator ShootKunais(Vector3 initialPosition)
     {
-        GameObject skyKunaiDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyKunaiDanmaku");
+        
         for (int i = 0; i < 50; i++)
         {
             StartCoroutine(ShootQuadKunai(initialPosition, Random.Range(0f, 360f), skyKunaiDanmaku));
@@ -84,7 +94,6 @@ public class NonCard3 : MonoBehaviour
     }
     IEnumerator ShootHemispheres()
     {
-        GameObject blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
         float interval = 3f;
         while (true)
         {

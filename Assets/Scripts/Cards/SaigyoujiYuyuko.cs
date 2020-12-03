@@ -41,7 +41,7 @@ public class SaigyoujiYuyuko : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM();
-        GetComponent<NonCard3>().StartCard();
+        GetComponent<NonCard1>().StartCard();
         //StartCoroutine(TestingCard());
     }
 
@@ -95,7 +95,6 @@ public class SaigyoujiYuyuko : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.05f);
-        GetComponent<BackgroundManager>().SetBackground(2);
         duration = 0.3f;
         for(float t = 0; t < duration; t += Time.deltaTime)
         {

@@ -6,14 +6,14 @@ public class DanmakuSelfdestruct : MonoBehaviour
 {
 	void Start()
 	{
-		//Destroy(gameObject, 20f);
+		DanmakuManager.Register(gameObject);
 	}
 
     void Update()
     {
-        if(transform.position.z > 150f || transform.position.z < -50f)
+        if(transform.position.z > 150f || transform.position.z < -20f)
         	StartCoroutine(FadeOut(0.2f));
-        if(((Vector2)transform.position).magnitude > 100f)
+        if(((Vector2)transform.position).magnitude > 95f)
         	StartCoroutine(FadeOut(0.2f));
     }
 
@@ -23,6 +23,7 @@ public class DanmakuSelfdestruct : MonoBehaviour
         if(fadeout)
             yield break;
         fadeout = true;
+        DanmakuManager.Unregister(gameObject);
         SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         for(float t = 0; t < duration; t += Time.deltaTime)
         {

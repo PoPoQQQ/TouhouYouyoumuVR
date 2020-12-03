@@ -11,6 +11,7 @@ public class Card6 : MonoBehaviour
     {
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.06f, 0.2f);
         yield return new WaitForSeconds(0.06f);
+        DanmakuManager.ClearDanmaku();
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<SaigyoujiYuyuko>().Oogi(false);
         GetComponent<SaigyoujiYuyuko>().Ring(false);

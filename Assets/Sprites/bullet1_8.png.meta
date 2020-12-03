@@ -2295,10 +2295,10 @@ TextureImporter:
       name: bullet1_8_68
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1408
-        width: 128
-        height: 128
+        x: 529
+        y: 1413
+        width: 92
+        height: 117
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

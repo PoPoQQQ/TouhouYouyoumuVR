@@ -37,8 +37,10 @@ public class NonCard2 : MonoBehaviour
         
         GetComponent<SaigyoujiYuyuko>().Oogi(true);
         yield return new WaitForSeconds(0.1f);
-        GetComponent<WhiteScreenManager>().Flash(Color.white, 0.06f, 0.2f);
-        yield return new WaitForSeconds(0.4f);
+        GetComponent<WhiteScreenManager>().Flash(Color.white, 0.05f, 0.2f);
+        yield return new WaitForSeconds(0.05f);
+        GetComponent<BackgroundManager>().SetBackground(2);
+        yield return new WaitForSeconds(0.35f);
         GetComponent<Floating>().enabled = true;
         yield return new WaitForSeconds(1f);
 
