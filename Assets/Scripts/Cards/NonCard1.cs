@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class NonCard1 : MonoBehaviour
 {
+    GameObject skySakuraDanmaku;
+    GameObject yellowSakuraDanmaku;
+    GameObject skyTamaDanmaku;
+    GameObject yellowTamaDanmaku;
+
+    void Start()
+    {
+        skySakuraDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkySakuraDanmaku");
+        yellowSakuraDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowSakuraDanmaku");
+        skyTamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyTamaDanmaku");
+        yellowTamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowTamaDanmaku");
+    }
+
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -13,17 +26,14 @@ public class NonCard1 : MonoBehaviour
         GetComponent<BackgroundManager>().SetBackground(0);
         yield return new WaitForSeconds(3f);
 
-        GameObject skySakuraDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkySakuraDanmaku");
-        GameObject yellowSakuraDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowSakuraDanmaku");
-        GameObject skyTamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyTamaDanmaku");
-        GameObject yellowTamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowTamaDanmaku");
+        
         for(int cnt = 0; cnt < 2; cnt++)
         {
     		StartCoroutine(ShootSpiral1(skySakuraDanmaku, 90f, 450f, 25));
             for(int i = 0; i < 4; i++)
             {
             	float startAngle = Random.Range(0f, 360f);
-	            StartCoroutine(ShootSpiral2(yellowTamaDanmaku, startAngle, startAngle + 360f, 8));
+	            StartCoroutine(ShootSpiral2(yellowTamaDanmaku, startAngle, startAngle + 360f, 16));
             }
             yield return new WaitForSeconds(3f);
 
@@ -74,9 +84,9 @@ public class NonCard1 : MonoBehaviour
 
     IEnumerator ShootLine1(GameObject danmaku, float angle)
     {
-        float startPosition = -5f;
-        float endPosition = 25f;
-        float deltaPosition = 3f;
+        float startPosition = 5f;
+        float endPosition = 120f;
+        float deltaPosition = 12f;
         float deltaAngle = 4f;
         for(float position = startPosition; position < endPosition; position += deltaPosition)
         {
@@ -93,44 +103,34 @@ public class NonCard1 : MonoBehaviour
         float alpha = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(alpha), Mathf.Sin(alpha), 0f);
 
-        Vector3 sourcePosition = transform.position;
-        sourcePosition.z -= 0.1f;
-        sourcePosition += direction * position;
-
         Vector3 targetPosition = transform.position;
+        targetPosition += direction * position;
         targetPosition.z = 0f;
-        targetPosition += direction * (4f * position + 15.5f);
-
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(sourcePosition, targetPosition, 2.5f);
+        
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.5f);
     }
 
     IEnumerator ShootSpiral2(GameObject danmaku, float startAngle, float endAngle, int count)
     {
-    	float position = Random.Range(10f, 25f);
+    	float position = Random.Range(1f, 100f);
         for(int i = count - 1; i >= 0; i--)
         {
             float angle = startAngle + (endAngle - startAngle) * i / count;
             ShootDanmakus2(danmaku, angle, position);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
     void ShootDanmakus2(GameObject danmaku, float angle, float position)
     {
-        int count = 3;
-
         float alpha = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(alpha), Mathf.Sin(alpha), 0f);
 
-        Vector3 sourcePosition = transform.position;
-        sourcePosition.z -= 0.01f;
-        sourcePosition += direction * position;
-
         Vector3 targetPosition = transform.position;
         targetPosition.z = 0f;
-        targetPosition += direction * (4f * position - 50f);
+        targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(sourcePosition, targetPosition, 2.75f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.75f);
     }
 
     void ShootSpirals3(GameObject danmaku, int count)
@@ -146,8 +146,8 @@ public class NonCard1 : MonoBehaviour
 
     IEnumerator ShootSpiral3(GameObject danmaku, float startAngle, float endAngle, int count)
     {
-    	float startPosition = 20f;
-    	float endPosition = 50f;
+    	float startPosition = 10f;
+    	float endPosition = 70f;
         for(int i = count - 1; i >= 0; i--)
         {
             float angle = startAngle + (endAngle - startAngle) * i / count;
@@ -164,15 +164,11 @@ public class NonCard1 : MonoBehaviour
         float alpha = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(alpha), Mathf.Sin(alpha), 0f);
 
-        Vector3 sourcePosition = transform.position;
-        sourcePosition.z -= 0.01f;
-        sourcePosition += direction * position;
-
         Vector3 targetPosition = transform.position;
         targetPosition.z = 0f;
-        targetPosition += direction * (2f * position - 30f);
+        targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(sourcePosition, targetPosition, 2.75f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.75f);
     }
 
     IEnumerator ShootSpiral4(GameObject danmaku, float startAngle, float endAngle, int count)
@@ -187,9 +183,9 @@ public class NonCard1 : MonoBehaviour
 
     IEnumerator ShootLine4(GameObject danmaku, float angle)
     {
-        float startPosition = -5f;
-        float endPosition = 25f;
-        float deltaPosition = 10f;
+        float startPosition = -4.5f;
+        float endPosition = 115.5f;
+        float deltaPosition = 40f;
         float deltaAngle = 4f;
         for(float position = startPosition; position < endPosition; position += deltaPosition)
         {
@@ -201,19 +197,13 @@ public class NonCard1 : MonoBehaviour
 
     void ShootDanmakus4(GameObject danmaku, float angle, float position)
     {
-        int count = 3;
-
         float alpha = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(alpha), Mathf.Sin(alpha), 0f);
 
-        Vector3 sourcePosition = transform.position;
-        sourcePosition.z -= 0.1f;
-        sourcePosition += direction * position;
-
         Vector3 targetPosition = transform.position;
         targetPosition.z = 0f;
-        targetPosition += direction * (4f * position + 15.5f);
+        targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(sourcePosition, targetPosition, 2.5f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.5f);
     }
 }

@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class Card2 : MonoBehaviour
 {
+    GameObject blueOodamaDanmaku;
+    GameObject skyButterflyDanmaku;
+    GameObject blueButterflyDanmaku;
+    GameObject purpleButterflyDanmaku;
+
+    void Start()
+    {
+        blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
+        skyButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyButterflyDanmaku");
+        blueButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueButterflyDanmaku");
+        purpleButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/PurpleButterflyDanmaku");
+    }
+
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -16,11 +29,6 @@ public class Card2 : MonoBehaviour
         GetComponent<CardEffectManager>().StartCard("亡舞 「生者必滅之理 -死蝶-」");
         GetComponent<BackgroundManager>().SetBackground(1);
         yield return new WaitForSeconds(3f);
-
-        GameObject blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
-        GameObject skyButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyButterflyDanmaku");
-        GameObject blueButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueButterflyDanmaku");
-        GameObject purpleButterflyDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/PurpleButterflyDanmaku");
 
         StartCoroutine(SwitchingCoroutine());
         StartCoroutine(RotatingCoroutine());

@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class Card1 : MonoBehaviour
 {
+    GameObject skyScaleDanmaku;
+    GameObject yellowScaleDanmaku;
+    GameObject greenScaleDanmaku;
+    GameObject redLaser;
+    GameObject pinkLaser;
+
+    void Start()
+    {
+        skyScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyScaleDanmaku");
+        yellowScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowScaleDanmaku");
+        greenScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/GreenScaleDanmaku");
+        redLaser = Resources.Load<GameObject>("Prefabs/Danmaku/RedLaser");
+        pinkLaser = Resources.Load<GameObject>("Prefabs/Danmaku/PinkLaser");
+    }
+
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -17,11 +32,7 @@ public class Card1 : MonoBehaviour
         GetComponent<BackgroundManager>().SetBackground(1);
         yield return new WaitForSeconds(3f);
 
-        GameObject skyScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/SkyScaleDanmaku");
-        GameObject yellowScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/YellowScaleDanmaku");
-        GameObject greenScaleDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/GreenScaleDanmaku");
-        GameObject redLaser = Resources.Load<GameObject>("Prefabs/Danmaku/RedLaser");
-        GameObject pinkLaser = Resources.Load<GameObject>("Prefabs/Danmaku/PinkLaser");
+        
 
         for(int cnt = 0; cnt < 3; cnt++)
         {

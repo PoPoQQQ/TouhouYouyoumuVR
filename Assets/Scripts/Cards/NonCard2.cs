@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class NonCard2 : MonoBehaviour
 {
+    GameObject blueOodamaDanmaku;
+    GameObject redBallDanmaku;
+    GameObject purpleBallDanmaku;
+
+    void Start()
+    {
+        blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
+        redBallDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/RedBallDanmaku");
+        purpleBallDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/PurpleBallDanmaku");
+    }
+
     public void StartCard()
     	=> StartCoroutine(CardCoroutine());
 
@@ -44,7 +55,6 @@ public class NonCard2 : MonoBehaviour
 
     IEnumerator ShootHemispheres()
     {
-        GameObject blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
         float interval = 3f;
         bool left = true;
         while(true)
@@ -92,8 +102,6 @@ public class NonCard2 : MonoBehaviour
 
     IEnumerator ShootCrosses()
     {
-        GameObject redBallDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/RedBallDanmaku");
-        GameObject purpleBallDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/PurpleBallDanmaku");
         while(true)
         { 
             StartCoroutine(ShootCross(redBallDanmaku, purpleBallDanmaku));
