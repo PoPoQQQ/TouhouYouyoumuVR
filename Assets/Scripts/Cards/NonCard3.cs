@@ -21,7 +21,8 @@ public class NonCard3 : MonoBehaviour
         cs.Add(StartCoroutine(ReleaseShroud(new Vector3(-40f, 8f, 89f))));
         cs.Add(StartCoroutine(ReleaseShroud(new Vector3(40f, 8f, 89f))));
         cs.Add(StartCoroutine(ShootHemispheres()));
-        yield return new WaitUntil(() => GameObject.Find("Player").GetComponentInChildren<AudioManager>().BGMTime() > 210f);
+        //yield return new WaitUntil(() => GameObject.Find("Player").GetComponentInChildren<AudioManager>().BGMTime() > 210f);
+        yield return new WaitForSeconds(48f);
 
         foreach (Coroutine c in cs)
         {
@@ -84,7 +85,7 @@ public class NonCard3 : MonoBehaviour
     IEnumerator ShootHemispheres()
     {
         GameObject blueOodamaDanmaku = Resources.Load<GameObject>("Prefabs/Danmaku/BlueOodamaDanmaku");
-        float interval = 2f;
+        float interval = 3f;
         while (true)
         {
             yield return new WaitForSeconds(interval);
@@ -108,21 +109,23 @@ public class NonCard3 : MonoBehaviour
             }
         }
         */
-        for (int rotationX = -60; rotationX <= 60; rotationX += 10)
+        int circles = 4;
+        int[] cnt = new int[] {1, 6, 12, 18, 24};
+        for(int i = 0; i <= circles; i++)
         {
-            Vector3 zx = Quaternion.AngleAxis(rotationX, x) * z;
-            ShootDanmaku(danmaku, position, zx, Mathf.Abs(rotationX));
-        }
-        for (int rotationY = -60; rotationY <= 60; rotationY += 10)
-            if (rotationY != 0f)
+            float angle = 75f / circles * i;
+            Vector3 u = Quaternion.AngleAxis(angle, x) * z;
+            for(int j = 0; j < cnt[i]; j++)
             {
-                Vector3 zy = Quaternion.AngleAxis(rotationY, y) * z;
-                ShootDanmaku(danmaku, position, zy, Mathf.Abs(rotationY));
+                float _angle = 360f / cnt[i] * (j + (i % 2 == 0 ? 0.5f : 0f));
+                Vector3 v = Quaternion.AngleAxis(_angle, z) * u;
+                ShootDanmaku(danmaku, transform.position, v);
             }
+        }
     }
 
-    void ShootDanmaku(GameObject danmaku, Vector3 position, Vector3 direction, float deltaSpeed)
+    void ShootDanmaku(GameObject danmaku, Vector3 position, Vector3 direction)
     {
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(position, direction, (40f - deltaSpeed * 0.25f) * 1f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(position, direction, 20f);
     }
 }
