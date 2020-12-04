@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
     public TextMesh hpText;
-    public int initHp = 20;
+    public int initHp = 60;
 
     public Image hpImage;
 
@@ -69,6 +69,7 @@ public class PlayerCollider : MonoBehaviour
         if(obj.tag == "Danmaku")
         {
             currHp -= 1;
+            GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDamageSE();
             Destroy(obj);
             StartCoroutine(getDamage());
         }

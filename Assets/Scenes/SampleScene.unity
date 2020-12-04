@@ -611,8 +611,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 8300000, guid: 7bc4fdebf1b367f4194b6419947e2c25, type: 3}
   BGM2: {fileID: 8300000, guid: 2fc46af44e637d94795a2ee39ea8884a, type: 3}
+  StartBGM: {fileID: 8300000, guid: 2250605dd7229384da42b7d8d002f0a1, type: 3}
   cardSE: {fileID: 8300000, guid: 8160ad6136298734ea1bddf94a05180d, type: 3}
   grazeSE: {fileID: 8300000, guid: 1ff7e9bb207c7004f877036dbe889a71, type: 3}
+  damageSE: {fileID: 8300000, guid: 4c9f43d980522f44da27c50b80ead6cb, type: 3}
 --- !u!1 &219792838
 GameObject:
   m_ObjectHideFlags: 0
@@ -10359,7 +10361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpText: {fileID: 1341640937}
-  initHp: 20
+  initHp: 60
   hpImage: {fileID: 154146458}
   DamageBackground: {fileID: 484900066}
   damageColor: {r: 0.9433962, g: 0, b: 0, a: 1}

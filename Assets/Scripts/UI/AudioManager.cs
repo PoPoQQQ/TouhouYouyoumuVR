@@ -6,9 +6,14 @@ public class AudioManager : MonoBehaviour
 {
 	public AudioClip BGM;
     public AudioClip BGM2;
+
+    public AudioClip StartBGM;
+    
 	public AudioClip cardSE;
 
     public AudioClip grazeSE;
+
+    public AudioClip damageSE;
 
 	AudioSource bgm = null;
 
@@ -31,6 +36,16 @@ public class AudioManager : MonoBehaviour
     {
         bgm = gameObject.AddComponent<AudioSource>();
         bgm.clip = BGM2;
+        bgm.loop = true;
+        bgm.volume = 1f;
+        bgm.Play();
+    }
+
+    public void PlayStartBGM()
+    {
+        Debug.Log("play start BGM");
+        bgm = gameObject.AddComponent<AudioSource>();
+        bgm.clip = StartBGM;
         bgm.loop = true;
         bgm.volume = 1f;
         bgm.Play();
@@ -78,5 +93,20 @@ public class AudioManager : MonoBehaviour
     	yield return new WaitWhile(() => audioSource != null && audioSource.isPlaying);
         if(audioSource != null)
         	Destroy(audioSource);
+    }
+
+    public void PlayDamageSE()
+    => StartCoroutine(PlayDamageSECoroutine());
+    
+    IEnumerator PlayDamageSECoroutine()
+    {
+    	AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+    	audioSource.clip = damageSE;
+    	audioSource.loop = false;
+    	audioSource.volume = 1.0f;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+    	audioSource.Play();
+    	yield return new WaitWhile(() => audioSource.isPlaying);
+    	Destroy(audioSource);
     }
 }

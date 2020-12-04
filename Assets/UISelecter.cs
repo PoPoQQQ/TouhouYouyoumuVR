@@ -14,6 +14,7 @@ public class UISelecter : MonoBehaviour
     public GameObject start;
     void Start()
     {
+        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayStartBGM();
         camera = GameObject.Find("LeftEye").transform;
     }
 
