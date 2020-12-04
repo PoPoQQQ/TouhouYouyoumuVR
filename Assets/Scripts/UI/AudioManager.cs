@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip BGM2;
 	public AudioClip cardSE;
 
+    public AudioClip grazeSE;
+
 	AudioSource bgm = null;
 
 	public void PlayBGM()
@@ -59,5 +61,22 @@ public class AudioManager : MonoBehaviour
     	audioSource.Play();
     	yield return new WaitWhile(() => audioSource.isPlaying);
     	Destroy(audioSource);
+    }
+
+    public void PlayGrazeSE(GameObject obj)
+        => StartCoroutine(PlayGrazeSECoroutine(obj));
+    
+    IEnumerator PlayGrazeSECoroutine(GameObject obj)
+    {
+    	AudioSource audioSource = obj.AddComponent<AudioSource>();
+    	audioSource.clip = grazeSE;
+    	audioSource.loop = false;
+    	audioSource.volume = 1.2f;
+        audioSource.spatialBlend = 0.5f;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+    	audioSource.Play();
+    	yield return new WaitWhile(() => audioSource != null && audioSource.isPlaying);
+        if(audioSource != null)
+        	Destroy(audioSource);
     }
 }
