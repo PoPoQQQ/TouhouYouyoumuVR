@@ -42,7 +42,7 @@ public class Card5 : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(ShootSakura(pinkSakuraDanmaku));
-        for(int cnt = 0; cnt < 7; cnt++)
+        for(int cnt = 0; cnt < 1; cnt++)
         {
             ShootButterflies(purpleButterflyDanmaku, true);
             yield return new WaitForSeconds(1.5f);
@@ -59,6 +59,7 @@ public class Card5 : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
 
+        GetComponent<SaigyoujiYuyuko>().petals2.Play();
         yield return new WaitForSeconds(4f);
         GetComponent<Card6>().StartCard();
         Destroy(this);
@@ -73,7 +74,7 @@ public class Card5 : MonoBehaviour
             Vector3 position = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad) * radius, Mathf.Sin(angle * Mathf.Deg2Rad) * radius, Random.Range(30f, 100f));
             Vector3 direction = new Vector3(0f, (angle < 90f? -1: 1) * 10f, -5f);
             Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(position, direction, direction.magnitude);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -105,9 +106,10 @@ public class Card5 : MonoBehaviour
         Vector3 x = Vector3.right;
         Vector3 y = Quaternion.AngleAxis(40f, x) * z;
         float initialAngle = Random.Range(0f, 360f);
+        float __angle = Random.Range(10f, 170f);
         for(int a = 0; a < 2; a++)
         {
-            float angle = Random.Range(0f, 360f);
+            float angle = (a * 2 - 1) * __angle;
             Vector3 u = Quaternion.AngleAxis(angle, z) * y;
             for(int i = 0; i < 6; i++)
             {

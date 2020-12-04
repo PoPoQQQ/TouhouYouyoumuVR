@@ -9,6 +9,7 @@ public class SaigyoujiYuyuko : MonoBehaviour
     public GameObject oogi;
     public GameObject ring;
     public ParticleSystem petals;
+    public ParticleSystem petals2;
 
     void Start()
     {
