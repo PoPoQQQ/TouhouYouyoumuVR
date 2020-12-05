@@ -11,21 +11,21 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.google.resonance.audio": {
       "version": "2.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
       "version": "1.1.4",
@@ -34,14 +34,14 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.1"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
       "version": "1.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
       "version": "1.1.14",
@@ -52,7 +52,7 @@
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
       "version": "2.0.1",
@@ -61,14 +61,14 @@
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
       "version": "1.2.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.ugui": {
       "version": "1.0.0",
@@ -85,7 +85,7 @@
       "dependencies": {
         "com.unity.google.resonance.audio": "2.0.0"
       },
-      "url": "https://packages.unity.cn"
+      "url": "https://packages.unity.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
