@@ -18,16 +18,27 @@ public class AudioManager : MonoBehaviour
 	AudioSource bgm = null;
 
 	public void PlayBGM()
+        => StartCoroutine("PlayBGMCoroutine");
+
+    IEnumerator PlayBGMCoroutine()
 	{
 		bgm = gameObject.AddComponent<AudioSource>();
 		bgm.clip = BGM;
     	bgm.loop = true;
     	bgm.volume = 1f;
     	bgm.Play();
+
+        while(true)
+        {
+            if(bgm.time >= 267f)
+                bgm.time = 13.5f;
+            yield return 0;
+        }
 	}
 
     public void StopBGM()
     {
+        StopCoroutine("PlayBGMCoroutine");
         Destroy(bgm);
         bgm = null;
     }

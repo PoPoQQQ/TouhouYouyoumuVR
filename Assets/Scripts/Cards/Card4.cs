@@ -45,18 +45,17 @@ public class Card4 : MonoBehaviour
     {
         for (int I = 0; I < num; I++)
         {
-            ShootRing(skyButterflyObject, new Vector3(0f, 0f, 100f), 1);
-            ShootRing(skyButterflyObject, new Vector3(0f, 0f, 100f), -1);
-            ShootRing(greenButterflyObject, new Vector3(15f, -10f, 100f), -1);
-            ShootRing(greenButterflyObject, new Vector3(-15f, -10f, 100f), 1);
-            ShootRing(yellowButterflyObject, new Vector3(30f, 10f, 100f), 1);
-            ShootRing(yellowButterflyObject, new Vector3(-30f, 10f, 100f), -1);
+            ShootRing(skyButterflyObject, new Vector3(0f, 0f, 100f), 1, 14);
+            ShootRing(skyButterflyObject, new Vector3(0f, 0f, 100f), -1, 14);
+            ShootRing(greenButterflyObject, new Vector3(15f, -10f, 100f), -1, 10);
+            ShootRing(greenButterflyObject, new Vector3(-15f, -10f, 100f), 1, 10);
+            ShootRing(yellowButterflyObject, new Vector3(30f, 10f, 100f), 1, 10);
+            ShootRing(yellowButterflyObject, new Vector3(-30f, 10f, 100f), -1, 10);
             yield return new WaitForSeconds(6.5f);
         }
     }
 
-    void ShootRing(GameObject danmaku, Vector3 position, int direction) {
-        int count = 10;
+    void ShootRing(GameObject danmaku, Vector3 position, int direction, int count) {
         float r = 20f;
         float r2 = 40f;
         for (int i = 0; i < count; i++)
@@ -68,7 +67,7 @@ public class Card4 : MonoBehaviour
             float a3 = a2 + Mathf.PI / 4 * direction;
             dest.x += r2 * Mathf.Cos(a3);
             dest.y += r2 * Mathf.Sin(a3);
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < 12; j += 2)
             {
                 GameObject instance = Instantiate(danmaku);
                 instance.AddComponent<SpiralRayDanmaku>().InitializeWithDestination(position,
@@ -77,7 +76,7 @@ public class Card4 : MonoBehaviour
                                                                                   r,
                                                                                   80,
                                                                                   2f,
-                                                                                  25f + j * j / 10 * 2f,
+                                                                                  25f + j * j / 12 * 2f,
                                                                                   dest);
             }
         }
@@ -130,7 +129,7 @@ public class Card4 : MonoBehaviour
         }
         for (float a = - width; a <= width; a += dif)
         {
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i < 8; i += 2)
             {
                 GameObject instance = Instantiate(danmaku);
                 instance.AddComponent<SpiralRayDanmaku>().InitializeTowardsPlayer(transform.position,

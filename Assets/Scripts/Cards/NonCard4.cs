@@ -26,7 +26,6 @@ public class NonCard4 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().Oogi(false);
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(4);
-        yield return new WaitForSeconds(3f);
 
         int num = 5;
         StartCoroutine(ShootWhip(num));
