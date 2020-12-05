@@ -42,7 +42,7 @@ public class Card5 : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(ShootSakura(pinkSakuraDanmaku));
-        for(int cnt = 0; cnt < 1; cnt++)
+        for(int cnt = 0; cnt < 7; cnt++)
         {
             ShootButterflies(purpleButterflyDanmaku, true);
             yield return new WaitForSeconds(1.5f);

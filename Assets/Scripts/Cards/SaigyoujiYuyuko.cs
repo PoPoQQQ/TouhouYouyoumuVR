@@ -42,31 +42,30 @@ public class SaigyoujiYuyuko : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM();
-        GetComponent<NonCard1>().StartCard();
+        GetComponent<Card4>().StartCard();
         //StartCoroutine(TestingCard());
     }
 
-    public void RandomMove()
+    public void RandomMove(float duration = 1f)
     {
         Vector3 target;
         do {
             target = Random.insideUnitCircle * 25f;
             target.z = transform.position.z;
         } while((target - transform.position).magnitude < 20f);
-        MoveTo(target);
+        MoveTo(target, duration);
     }
 
-    public void MoveTo(Vector3 target)
+    public void MoveTo(Vector3 target, float duration = 1f)
     {
         GetComponent<SpriteRenderer>().flipX = (target.x < transform.position.x);
         GetComponent<Animator>().SetTrigger("Dash");
-        StartCoroutine(MoveToCoroutine(target));
+        StartCoroutine(MoveToCoroutine(target, duration));
     }
 
-    IEnumerator MoveToCoroutine(Vector3 target)
+    IEnumerator MoveToCoroutine(Vector3 target, float duration)
     {
         Vector3 deltaPosition = target - transform.position;
-        float duration = 1f;
         Vector3 originPosition = transform.position;
         for(float t = 0; t < duration; t += Time.deltaTime)
         {
