@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Card4 : MonoBehaviour
 {
-
     GameObject greenButterflyObject;
     GameObject blueButterflyObject;
     GameObject yellowButterflyObject;
