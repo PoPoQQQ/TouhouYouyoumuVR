@@ -51,6 +51,9 @@ TagManager:
   - name: Yuyuko
     uniqueID: 951674265
     locked: 0
+  - name: Laser
+    uniqueID: 323827609
+    locked: 0
   - name: Danmaku
     uniqueID: 2945700535
     locked: 0

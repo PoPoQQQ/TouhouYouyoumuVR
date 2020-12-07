@@ -324,9 +324,9 @@ TextureImporter:
       name: stg6enm2_9
       rect:
         serializedVersion: 2
-        x: 144
+        x: 138
         y: 413
-        width: 54
+        width: 61
         height: 99
       alignment: 9
       pivot: {x: 0.48541656, y: 0.5159089}

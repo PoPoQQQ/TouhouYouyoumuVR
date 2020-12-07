@@ -12,7 +12,7 @@
         Pass
         {
         	Tags { "LightMode"="ForwardBase" }
-
+            Lighting Off
             Cull front
             CGPROGRAM
             #pragma vertex vert

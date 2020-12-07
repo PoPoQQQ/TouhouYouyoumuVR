@@ -15,6 +15,7 @@
         	Tags { "LightMode"="ForwardBase" }
 
             Cull front
+            Lighting Off
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

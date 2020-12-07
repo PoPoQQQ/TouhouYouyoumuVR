@@ -10,6 +10,7 @@ public class SaigyoujiYuyuko : MonoBehaviour
     public GameObject ring;
     public ParticleSystem petals;
     public ParticleSystem petals2;
+    public GameObject tamashi;
 
     void Start()
     {
@@ -42,7 +43,7 @@ public class SaigyoujiYuyuko : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM();
-        GetComponent<Card6>().StartCard();
+        GetComponent<NonCard1>().StartCard();
         //StartCoroutine(TestingCard());
     }
 
@@ -136,5 +137,10 @@ public class SaigyoujiYuyuko : MonoBehaviour
     		alpha += 0.1f;
     		yield return new WaitForSeconds(0.1f);
     	}
+    }
+
+    public void Tamashi(bool flag = true)
+    {
+        tamashi.SetActive(flag);
     }
 }

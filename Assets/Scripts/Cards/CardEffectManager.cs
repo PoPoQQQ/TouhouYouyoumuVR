@@ -45,6 +45,7 @@ public class CardEffectManager : MonoBehaviour
     		SetTachieAlpha(-4f * (x * x - x) * amplitude);
     		yield return 0;
     	}
+        SetTachieAlpha(0f);
     }
 
     IEnumerator CardNameAnimation()
