@@ -4,16 +4,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class UISelecter : MonoBehaviour
+public class ResultUISelecter : MonoBehaviour
 {
     // Start is called before the first frame update
     Transform camera;
 
     public GameObject background;
 
-    public GameObject start;
-    public GameObject option;
-    public GameObject result;
+    public GameObject title;
 
     void Start()
     {
@@ -25,9 +23,7 @@ public class UISelecter : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        start.GetComponent<UISelectBehavior>().isSelecting = false;
-        option.GetComponent<UISelectBehavior>().isSelecting = false;
-        result.GetComponent<UISelectBehavior>().isSelecting = false;
+        title.GetComponent<UISelectBehavior>().isSelecting = false;
         if(Physics.Raycast(camera.position, camera.forward, out hit))
         {
             GameObject obj = hit.collider.gameObject;
@@ -41,24 +37,12 @@ public class UISelecter : MonoBehaviour
                     //SceneManager.LoadScene("SampleScene");
                 }*/
             }
-            else if(obj.name == "Start")
+            else if(obj.name == "Title")
             {
-                start.GetComponent<UISelectBehavior>().isSelecting = true;
+                title.GetComponent<UISelectBehavior>().isSelecting = true;
                 if(Input.touchCount == 1)
                 {
-                    SceneManager.LoadScene("SampleScene");
-                }
-            }
-            else if(obj.name == "Option")
-            {
-                option.GetComponent<UISelectBehavior>().isSelecting = true;
-            }
-            else if(obj.name == "Result")
-            {
-                result.GetComponent<UISelectBehavior>().isSelecting = true;
-                if(Input.touchCount == 1)
-                {
-                    SceneManager.LoadScene("ResultMenu");
+                    SceneManager.LoadScene("StartMenu");
                 }
             }
         }
