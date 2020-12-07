@@ -32,8 +32,6 @@ public class Card1 : MonoBehaviour
         GetComponent<BackgroundManager>().SetBackground(1);
         yield return new WaitForSeconds(3f);
 
-        
-
         for(int cnt = 0; cnt < 3; cnt++)
         {
             CreateSineWaves(skyScaleDanmaku, yellowScaleDanmaku, greenScaleDanmaku, 1f);

@@ -7,7 +7,7 @@ public class LaserDanmaku : MonoBehaviour
 	Transform sprite;
 	float loadingTime;
 	float width;
-	const float initialWidth = 1.5f;
+	const float initialWidth = 0.5f;
 
 	public void Initialize(float loadingTime, float width)
 	{
@@ -17,9 +17,9 @@ public class LaserDanmaku : MonoBehaviour
 		StartCoroutine(Widen());
 	}
 
-	public void Destruct()
+	public void Destruct(float duration = 0.3f)
 	{
-		StartCoroutine(DestructCoroutine());
+		StartCoroutine(DestructCoroutine(duration));
 	}
 
 	IEnumerator Widen()
@@ -40,13 +40,14 @@ public class LaserDanmaku : MonoBehaviour
 
 		scale.y = width;
 		sprite.localScale = scale;
+		GetComponentInChildren<CapsuleCollider>().enabled = true;
 	}
 
-	IEnumerator DestructCoroutine()
+	IEnumerator DestructCoroutine(float duration)
 	{
 		Vector3 scale = sprite.localScale;
 
-		float duration = 0.3f;
+		GetComponentInChildren<CapsuleCollider>().enabled = false;
 		for(float t = 0; t < duration; t += Time.deltaTime)
 		{
 			scale.y = (1 - t / duration) * width;

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
-  - component: {fileID: 1965849399972384998}
+  - component: {fileID: 1438811302194965029}
   m_Layer: 0
-  m_Name: RedLaser
+  m_Name: RedOodamaDanmaku 1
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3513398700793271780}
+  - {fileID: 7671627864119075928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27edddad895c1234eb519e77639d296d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &1965849399972384998
-CapsuleCollider:
+--- !u!135 &1438811302194965029
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54,11 +54,10 @@ CapsuleCollider:
   m_GameObject: {fileID: 7671627863268359024}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 1
-  m_Height: 200
-  m_Direction: 1
-  m_Center: {x: 0, y: 100.5, z: 0}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8.67
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7671627864119075929
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7671627864119075928}
   - component: {fileID: 7671627864119075935}
-  - component: {fileID: 619866463601973932}
+  - component: {fileID: 3945839430385663237}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,11 +83,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7671627864119075929}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 4, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children: []
-  m_Father: {fileID: 3513398700793271780}
+  m_Father: {fileID: 7671627863268359031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7671627864119075935
@@ -130,9 +129,9 @@ SpriteRenderer:
   m_SortingLayerID: -1349266761
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4560849194261006140, guid: f61f82bfde85d72428fd39eabd320844,
+  m_Sprite: {fileID: -4651599682203073303, guid: 4e100e310f32617479963d3c5f7a5fb1,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.94509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,7 +141,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &619866463601973932
+--- !u!114 &3945839430385663237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,37 +150,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7671627864119075929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7213302edc155ea4bb28452ee8b2aec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 082743538e0dada45a8b57b9be79008a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8896763573406059002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3513398700793271780}
-  m_Layer: 0
-  m_Name: SpriteTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3513398700793271780
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8896763573406059002}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7671627864119075928}
-  m_Father: {fileID: 7671627863268359031}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}

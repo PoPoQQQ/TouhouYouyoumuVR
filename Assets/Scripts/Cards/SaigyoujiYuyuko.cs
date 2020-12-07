@@ -42,7 +42,7 @@ public class SaigyoujiYuyuko : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayBGM();
-        GetComponent<NonCard1>().StartCard();
+        GetComponent<Card6>().StartCard();
         //StartCoroutine(TestingCard());
     }
 

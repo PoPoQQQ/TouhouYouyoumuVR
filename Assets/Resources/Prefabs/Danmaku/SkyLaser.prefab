@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
-  - component: {fileID: 1965849399972384998}
+  - component: {fileID: 1993232704300370215}
   m_Layer: 0
-  m_Name: RedLaser
+  m_Name: SkyLaser
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27edddad895c1234eb519e77639d296d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &1965849399972384998
+--- !u!136 &1993232704300370215
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ SpriteRenderer:
   m_SortingLayerID: -1349266761
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4560849194261006140, guid: f61f82bfde85d72428fd39eabd320844,
+  m_Sprite: {fileID: 5865275385197703403, guid: f61f82bfde85d72428fd39eabd320844,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
