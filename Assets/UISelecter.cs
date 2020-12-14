@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,7 +44,7 @@ public class UISelecter : MonoBehaviour
             else if(obj.name == "Start")
             {
                 start.GetComponent<UISelectBehavior>().isSelecting = true;
-                if(Input.touchCount == 1)
+                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
                     SceneManager.LoadScene("SampleScene");
                 }
@@ -52,11 +52,15 @@ public class UISelecter : MonoBehaviour
             else if(obj.name == "Option")
             {
                 option.GetComponent<UISelectBehavior>().isSelecting = true;
+                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
+                {
+                    SceneManager.LoadScene("OptionMenu");
+                }
             }
             else if(obj.name == "Result")
             {
                 result.GetComponent<UISelectBehavior>().isSelecting = true;
-                if(Input.touchCount == 1)
+                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
                     SceneManager.LoadScene("ResultMenu");
                 }

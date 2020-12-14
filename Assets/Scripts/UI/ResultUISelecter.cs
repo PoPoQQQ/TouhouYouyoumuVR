@@ -40,7 +40,7 @@ public class ResultUISelecter : MonoBehaviour
             else if(obj.name == "Title")
             {
                 title.GetComponent<UISelectBehavior>().isSelecting = true;
-                if(Input.touchCount == 1)
+                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
                     SceneManager.LoadScene("StartMenu");
                 }

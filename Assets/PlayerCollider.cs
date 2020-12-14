@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
     public TextMesh hpText;
-    public int initHp = 60;
+    public int initHp;
 
     public Image hpImage;
 
@@ -21,6 +21,12 @@ public class PlayerCollider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Easy) initHp = GlobalInfo.easy_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Normal) initHp = GlobalInfo.normal_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Hard) initHp = GlobalInfo.hard_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Lunatic) initHp = GlobalInfo.lunatic_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Extra) initHp = GlobalInfo.extra_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Phantasm) initHp = GlobalInfo.phantasm_hp;
         currHp = initHp;
         hpText.text = "hp : " + currHp.ToString();
         Debug.Log("collider start");
@@ -38,6 +44,11 @@ public class PlayerCollider : MonoBehaviour
         else
             currAmont = targetAmont;
         hpImage.fillAmount = currAmont;
+    }
+
+    public void ResetHp()
+    {
+        currHp = initHp;
     }
 
     IEnumerator getDamage()
@@ -71,7 +82,14 @@ public class PlayerCollider : MonoBehaviour
             currHp -= 1;
             GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDamageSE();
             Destroy(obj);
-            StartCoroutine(getDamage());
+            if(currHp <= 0)
+            {
+                GameObject.Find("GameController").GetComponent<GameController>().OnHPEmpty();
+            }
+            else
+            {
+                StartCoroutine(getDamage());
+            }
         }
         //Debug.Log("on collide enter : " + name);
     }

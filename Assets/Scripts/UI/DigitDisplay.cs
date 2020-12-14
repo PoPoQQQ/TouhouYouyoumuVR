@@ -19,6 +19,8 @@ public class DigitDisplay : MonoBehaviour
     int lastnumber;
     float lastscale;
 
+    Color lastColor = Color.white, color = Color.white;
+
     void updateDigit()
     {
         for(int i = length - 1, val = displaynumber; i >= 0; i--)
@@ -46,6 +48,15 @@ public class DigitDisplay : MonoBehaviour
         lastscale = scale;
     }
 
+    void updateColor()
+    {
+        foreach(GameObject digit in digitObject)
+        {
+            digit.GetComponent<Image>().color = color;
+        }
+        lastColor = color;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +78,11 @@ public class DigitDisplay : MonoBehaviour
         updateScale();
     }
 
+    public void SetColor(Color t_color)
+    {
+        color = t_color;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -74,5 +90,7 @@ public class DigitDisplay : MonoBehaviour
             updateDigit();
         if(scale != lastscale)
             updateScale();
+        if(lastColor != color)
+            updateColor();
     }
 }
