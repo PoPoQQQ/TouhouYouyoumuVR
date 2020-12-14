@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
     public TextMesh hpText;
-    public int initHp = 60;
+    public int initHp;
 
     public Image hpImage;
 
@@ -18,11 +18,15 @@ public class PlayerCollider : MonoBehaviour
     float currAmont;
     float decreaseRate = 0.003f;
 
-    bool invictus = false;
-
     // Start is called before the first frame update
     void Start()
     {
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Easy) initHp = GlobalInfo.easy_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Normal) initHp = GlobalInfo.normal_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Hard) initHp = GlobalInfo.hard_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Lunatic) initHp = GlobalInfo.lunatic_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Extra) initHp = GlobalInfo.extra_hp;
+        if(GlobalInfo.currDifficulty == GlobalInfo.Difficulty.Phantasm) initHp = GlobalInfo.phantasm_hp;
         currHp = initHp;
         hpText.text = "hp : " + currHp.ToString();
         Debug.Log("collider start");
@@ -42,33 +46,35 @@ public class PlayerCollider : MonoBehaviour
         hpImage.fillAmount = currAmont;
     }
 
+    public void ResetHp()
+    {
+        currHp = initHp;
+    }
+
     IEnumerator getDamage()
     {
-        float stepTime = 0.25f;
-        float fadeTime = 1.75f;
-        float stayTime = 1f;
-        invictus = true;
-        for(float t = 0; t < stepTime; t += Time.deltaTime)
+        int damageSteps = 50;
+        float stepTime = 0.005f;
+        float fadeTime = 0.005f;
+        float stayTime = 0.05f;
+        for(int i = 0; i < damageSteps; i++)
         {
-            float currRate = t / stepTime;
+            float currRate = stepTime * i;
             DamageBackground.color = new Color(damageColor.r, damageColor.g, damageColor.b, damageColor.a * currRate);
-            yield return 0;
+            yield return new WaitForSeconds(stepTime);
         }
         yield return new WaitForSeconds(stayTime);
-        for(float t = 0; t < fadeTime; t += Time.deltaTime)
+        for(int i = damageSteps - 1; i >= 0; i--)
         {
-            float currRate = 1 - t / fadeTime;
+            float currRate = fadeTime * i;
             DamageBackground.color = new Color(damageColor.r, damageColor.g, damageColor.b, damageColor.a * currRate);
-            yield return 0;
+            yield return new WaitForSeconds(stepTime);
         }
         DamageBackground.color = Color.clear;
-        invictus = false;
         yield return 0;
     }
 
     void OnTriggerEnter(Collider collider) {
-        if(invictus)
-            return;
         var name = collider.name;
         GameObject obj = collider.gameObject;
         if(obj.tag == "Danmaku")
@@ -76,7 +82,14 @@ public class PlayerCollider : MonoBehaviour
             currHp -= 1;
             GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDamageSE();
             Destroy(obj);
-            StartCoroutine(getDamage());
+            if(currHp <= 0)
+            {
+                GameObject.Find("GameController").GetComponent<GameController>().OnHPEmpty();
+            }
+            else
+            {
+                StartCoroutine(getDamage());
+            }
         }
         //Debug.Log("on collide enter : " + name);
     }

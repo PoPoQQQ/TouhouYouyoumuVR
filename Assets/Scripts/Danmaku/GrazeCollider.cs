@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GrazeCollider : MonoBehaviour
 {
+    public GameObject digitDisplay;
+    public int grazePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +24,10 @@ public class GrazeCollider : MonoBehaviour
         GameObject obj = collider.gameObject;
         if(obj.tag == "Danmaku")
         {
+            
             GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayGrazeSE(obj);
-            //Debug.Log("Graze " + name + " !");
+            digitDisplay.GetComponent<DigitDisplay>().displaynumber += grazePoint;
+            Debug.Log("Graze " + name + " !");
         }
         //Debug.Log("on collide enter : " + name);
     }
