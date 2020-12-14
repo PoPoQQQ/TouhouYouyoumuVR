@@ -15,10 +15,29 @@ public class UISelecter : MonoBehaviour
     public GameObject option;
     public GameObject result;
 
+    public GameObject title;
+    public GameObject loading;
+    public GameObject magicCircle;
+
     void Start()
     {
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayStartBGM();
         camera = GameObject.Find("LeftEye").transform;
+        loading.SetActive(false);
+        magicCircle.SetActive(false);
+    }
+
+    IEnumerator LoadSampleScene()
+    {
+        background.SetActive(false);
+        start.SetActive(false);
+        option.SetActive(false);
+        result.SetActive(false);
+        title.SetActive(false);
+        loading.SetActive(true);
+        magicCircle.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("SampleScene");
     }
 
     // Update is called once per frame
@@ -46,7 +65,8 @@ public class UISelecter : MonoBehaviour
                 start.GetComponent<UISelectBehavior>().isSelecting = true;
                 if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
-                    SceneManager.LoadScene("SampleScene");
+                    StartCoroutine(LoadSampleScene());
+                    //SceneManager.LoadScene("SampleScene");
                 }
             }
             else if(obj.name == "Option")
