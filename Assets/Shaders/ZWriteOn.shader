@@ -59,7 +59,7 @@
 
             float4 frag (v2f i) : COLOR
             {
-                return tex2D(_MainTex, i.uv);
+                return tex2D(_MainTex, i.uv) * i.color;
             }
 
             ENDCG

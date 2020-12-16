@@ -54,11 +54,11 @@ public class Card6 : MonoBehaviour
         {
             CreateLasers(cnt);
             StartCoroutine(CreateSpheres1());
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(2.25f);
             StartCoroutine(CreateSpheres2());
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(2.25f);
             CreateSphere3();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.5f);
         }
         CreateLasers(11);
         StartCoroutine(CreateSpheres1());
