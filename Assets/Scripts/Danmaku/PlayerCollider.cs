@@ -8,7 +8,7 @@ public class PlayerCollider : MonoBehaviour
     public TextMesh hpText;
     public int initHp;
 
-    public Image hpImage;
+    public Material radial;
 
     public Image DamageBackground;
 
@@ -30,7 +30,7 @@ public class PlayerCollider : MonoBehaviour
         currHp = initHp;
         hpText.text = "hp : " + currHp.ToString();
         Debug.Log("collider start");
-        hpImage.fillAmount = 1.0f;
+        radial.SetFloat("_FillAmount", 1f);
         currAmont = 1.0f;
     }
 
@@ -43,7 +43,7 @@ public class PlayerCollider : MonoBehaviour
             currAmont -= decreaseRate;
         else
             currAmont = targetAmont;
-        hpImage.fillAmount = currAmont;
+        radial.SetFloat("_FillAmount", currAmont);
     }
 
     public void ResetHp()

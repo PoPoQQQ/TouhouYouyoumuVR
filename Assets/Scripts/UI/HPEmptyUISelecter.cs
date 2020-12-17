@@ -15,7 +15,7 @@ public class HPEmptyUISelecter : MonoBehaviour
 
     void Start()
     {
-        camera = GameObject.Find("LeftEye").transform;
+        camera = GameObject.Find("CameraPosition").GetComponentInChildren<Camera>().transform;
     }
 
     // Update is called once per frame

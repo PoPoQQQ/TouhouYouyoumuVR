@@ -9,7 +9,7 @@ public class ScaleDanmakuAdjustion : MonoBehaviour
 
     void Start()
     {
-    	camera = GameObject.Find("LeftEye").GetComponent<Camera>();
+    	camera = GameObject.Find("CameraPosition").GetComponentInChildren<Camera>();
         lastPosition = transform.position;
     }
 
