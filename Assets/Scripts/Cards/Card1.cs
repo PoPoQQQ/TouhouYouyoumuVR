@@ -109,6 +109,7 @@ public class Card1 : MonoBehaviour
 
     IEnumerator CreateLasers(GameObject danmaku, float negative)
     {
+        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDanmakuSE(0);
         yield return new WaitForSeconds(0.15f);
         for(int i = -10; i <= 10; i++)
         {
@@ -134,7 +135,7 @@ public class Card1 : MonoBehaviour
 
     IEnumerator RotateLaser1(GameObject laser, float deltaRotationZ, float negative, float duration)
     {
-        for(float t = 0; t < duration; t += Time.deltaTime)
+        for(float t = 0; t < duration && laser; t += Time.deltaTime)
         {
             float angle = 90f + (-180f + deltaRotationZ) * Mathf.Sqrt(0.5f - 0.5f * Mathf.Cos(t / duration * Mathf.PI));
             Vector3 eulerAngles = laser.transform.eulerAngles;
@@ -146,7 +147,7 @@ public class Card1 : MonoBehaviour
 
     IEnumerator RotateLaser2(GameObject laser, float negative, float duration)
     {
-        for(float t = 0; t < duration; t += Time.deltaTime)
+        for(float t = 0; t < duration && laser; t += Time.deltaTime)
         {
             //float angle = 90f * Mathf.Pow(t / duration, 3f);
             float angle = 90f * Mathf.Pow(0.5f - 0.5f * Mathf.Cos(t / duration * Mathf.PI), 2);
@@ -161,6 +162,7 @@ public class Card1 : MonoBehaviour
     {
         yield return new WaitForSeconds(duration + 0.6f - deltaRotationZ * 0.02f);
         yield return new WaitForSeconds(0.05f);
-        laser.GetComponent<LaserDanmaku>().Destruct();
+        if(laser)
+            laser.GetComponent<LaserDanmaku>().Destruct();
     }
 }

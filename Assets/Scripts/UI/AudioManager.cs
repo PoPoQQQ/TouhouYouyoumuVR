@@ -15,6 +15,10 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip damageSE;
 
+    public AudioClip[] danmakuSEs;
+
+    public AudioClip enepSE;
+
 	AudioSource bgm = null;
 
 	public void PlayBGM()
@@ -119,5 +123,34 @@ public class AudioManager : MonoBehaviour
     	audioSource.Play();
     	yield return new WaitWhile(() => audioSource.isPlaying);
     	Destroy(audioSource);
+    }
+
+    public void PlayDanmakuSE(int index, float volume = 0.8f)
+        => StartCoroutine(PlayDanmakuSECoroutine(index, volume));
+
+    IEnumerator PlayDanmakuSECoroutine(int index, float volume)
+    {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = danmakuSEs[index];
+        audioSource.loop = false;
+        audioSource.volume = volume;
+        audioSource.Play();
+        yield return new WaitWhile(() => audioSource.isPlaying);
+        Destroy(audioSource);
+    }
+
+    public void PlayEnepSE()
+    => StartCoroutine(PlayEnepSECoroutine());
+    
+    IEnumerator PlayEnepSECoroutine()
+    {
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = enepSE;
+        audioSource.loop = false;
+        audioSource.volume = 0.8f;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.Play();
+        yield return new WaitWhile(() => audioSource.isPlaying);
+        Destroy(audioSource);
     }
 }

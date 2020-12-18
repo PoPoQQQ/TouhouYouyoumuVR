@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 7671627864119075935}
   - component: {fileID: 3945839430385663237}
   - component: {fileID: 854566998168489597}
+  - component: {fileID: 140982699149782465}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -128,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349266761
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -5242061038440291036, guid: 6555eed0501787d468516cf9d7fb25be,
     type: 3}
@@ -161,8 +162,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7671627864119075929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e87bb07ead330418dc8ecc81974383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &140982699149782465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671627864119075929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c73dbc90e4091f4c8894494eb4f5fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

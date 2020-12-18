@@ -59,9 +59,9 @@
 
             float4 frag (v2f i) : COLOR
             {
-                float4 col = tex2D(_MainTex, i.uv) * i.color;
+                float4 col = tex2D(_MainTex, i.uv);
                 clip(col.a - 0.65);
-                return col;
+                return col * i.color;
             }
 
             ENDCG

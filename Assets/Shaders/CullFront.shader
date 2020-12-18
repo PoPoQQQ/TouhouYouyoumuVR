@@ -12,8 +12,11 @@
         Pass
         {
         	Tags { "LightMode"="ForwardBase" }
-            Lighting Off
             Cull front
+            ZWrite Off
+            ZTest Off
+            Lighting Off
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

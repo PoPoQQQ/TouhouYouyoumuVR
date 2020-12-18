@@ -36,6 +36,7 @@ public class Card6 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(5);
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().StopBGM();
+        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayEnepSE();
         yield return new WaitForSeconds(4f);
 
         GetComponent<CardEffectManager>().WordsAppear();
@@ -73,6 +74,7 @@ public class Card6 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<SaigyoujiYuyuko>().Tamashi(false);
         GetComponent<BackgroundManager>().SetBackground(5);
+        DanmakuManager.ClearDanmaku();
 
         yield return new WaitForSeconds(4f);
         Destroy(this);
@@ -80,6 +82,8 @@ public class Card6 : MonoBehaviour
 
     void CreateLasers(int cnt)
     {
+        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDanmakuSE(0);
+
         int circles = 7;
         float rotatingAngle = 60f;
 
@@ -120,7 +124,8 @@ public class Card6 : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        laser.GetComponent<LaserDanmaku>().Destruct(1f);
+        if(laser)
+            laser.GetComponent<LaserDanmaku>().Destruct(1f);
     }
 
     IEnumerator CreateSpheres1()

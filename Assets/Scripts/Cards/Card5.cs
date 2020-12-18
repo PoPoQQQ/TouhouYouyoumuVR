@@ -43,7 +43,7 @@ public class Card5 : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(ShootSakura(pinkSakuraDanmaku));
-        for(int cnt = 0; cnt < 7; cnt++)
+        for(int cnt = 0; cnt < 6; cnt++)
         {
             ShootButterflies(purpleButterflyDanmaku, true);
             yield return new WaitForSeconds(1.5f);
@@ -61,6 +61,7 @@ public class Card5 : MonoBehaviour
         }
 
         GetComponent<SaigyoujiYuyuko>().petals2.Play();
+        StartCoroutine(PlayPetalSE());
         yield return new WaitForSeconds(4f);
         GetComponent<Card6>().StartCard();
         Destroy(this);
@@ -149,6 +150,17 @@ public class Card5 : MonoBehaviour
                 //Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, v, 25f);
                 Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, v, 30f);
             }
+        }
+    }
+
+    IEnumerator PlayPetalSE()
+    {
+        float interval = 0.5f;
+        while(true)
+        {
+            yield return new WaitForSeconds(interval);
+            GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDanmakuSE(1, 0.3f);
+            interval = Mathf.Max(interval * 0.8f, 0.15f);
         }
     }
 

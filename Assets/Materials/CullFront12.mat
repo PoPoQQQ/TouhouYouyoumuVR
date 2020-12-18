@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CullFront12
-  m_Shader: {fileID: 4800000, guid: d77ac391c9e8fd5439a47ffbf04b808f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9e1de6fc39695214c816b0385ebf8209, type: 3}
   m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

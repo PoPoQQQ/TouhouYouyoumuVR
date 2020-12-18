@@ -19,6 +19,7 @@
             //渲染参数，例如ZWrite Off表示不使用Z Buffer，Cull Front表示只渲染背面（不渲染正面）
         	Tags { "LightMode"="ForwardBase" }
         	ZWrite Off
+            ZTest Off
             Lighting Off
         	Blend SrcAlpha OneMinusSrcAlpha
             Cull front

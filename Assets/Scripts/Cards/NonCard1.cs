@@ -107,7 +107,7 @@ public class NonCard1 : MonoBehaviour
         targetPosition += direction * position;
         targetPosition.z = 0f;
         
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.5f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, targetPosition - transform.position, 40f);
     }
 
     IEnumerator ShootSpiral2(GameObject danmaku, float startAngle, float endAngle, int count)
@@ -130,7 +130,7 @@ public class NonCard1 : MonoBehaviour
         targetPosition.z = 0f;
         targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.75f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, targetPosition - transform.position, 36.36f);
     }
 
     void ShootSpirals3(GameObject danmaku, int count)
@@ -168,7 +168,7 @@ public class NonCard1 : MonoBehaviour
         targetPosition.z = 0f;
         targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.75f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, targetPosition - transform.position, 36.36f);
     }
 
     IEnumerator ShootSpiral4(GameObject danmaku, float startAngle, float endAngle, int count)
@@ -204,6 +204,6 @@ public class NonCard1 : MonoBehaviour
         targetPosition.z = 0f;
         targetPosition += direction * position;
 
-        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithSegment(transform.position, targetPosition, 2.5f);
+        Instantiate(danmaku).AddComponent<LinearDanmaku>().InitializeWithRay(transform.position, targetPosition - transform.position, 40f);
     }
 }
