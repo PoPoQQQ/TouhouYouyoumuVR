@@ -62,7 +62,7 @@
 
             float4 frag (v2f i) : COLOR
             {
-                float angle = atan2(-(i.uv.x - 0.5), -(i.uv.y - 0.5)) / 3.14159265 / 2 + 0.5;
+                float angle = atan2((i.uv.x - 0.5), -(i.uv.y - 0.5)) / 3.14159265 / 2 + 0.5;
                 if(angle < 1 - _FillAmount)
                     return float4(0, 0, 0, 0);
                 return tex2D(_MainTex, i.uv) * i.color;

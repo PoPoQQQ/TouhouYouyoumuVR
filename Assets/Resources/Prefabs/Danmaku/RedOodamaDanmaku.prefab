@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5004982027166417929}
   - component: {fileID: 1438811302194965029}
   m_Layer: 0
-  m_Name: RedOodamaDanmaku 1
+  m_Name: RedOodamaDanmaku
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349266761
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -4651599682203073303, guid: 4e100e310f32617479963d3c5f7a5fb1,
     type: 3}

@@ -24,6 +24,7 @@ public class NonCard2 : MonoBehaviour
         GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 0f, 100f));
         GetComponent<Floating>().enabled = false;
         yield return new WaitForSeconds(0.5f);
+        GetComponent<CardEffectManager>().EndCard();
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(6);
         yield return new WaitForSeconds(0.2f);

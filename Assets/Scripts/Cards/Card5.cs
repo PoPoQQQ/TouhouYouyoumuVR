@@ -24,6 +24,7 @@ public class Card5 : MonoBehaviour
     {
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.5f, 0.5f);
         yield return new WaitForSeconds(0.5f);
+        GetComponent<CardEffectManager>().EndCard();
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(4);
         yield return new WaitForSeconds(3f);

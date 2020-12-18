@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CardEffectManager : MonoBehaviour
+public class CardEffectManager2 : MonoBehaviour
 {
 	public GameObject yuyukoTachie;
-	public TextMesh[] textMeshes;
+	public Text[] textMeshes;
 	public GameObject cardName;
-	public SpriteRenderer cardNameFrame;
+	public Image cardNameFrame;
     public GameObject words;
 
     public void StartCard(string cardName, bool last = false)
     {
-        GetComponent<CardEffectManager2>().StartCard(cardName, last);
-        return;
-        
     	float duration = 2.7f;
         GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayCardSE();
         if(!last)
@@ -24,22 +22,17 @@ public class CardEffectManager : MonoBehaviour
         }
         else
             words.SetActive(false);
-    	foreach(TextMesh textMesh in textMeshes)
+    	foreach(Text textMesh in textMeshes)
     		textMesh.text = cardName;
     	StartCoroutine(CardNameAnimation());
     }
 
-    public void EndCard()
-    {
-        GetComponent<CardEffectManager2>().EndCard();
-        return;
-
-        SetCardNameAlpha(0f);
-    }
+     public void EndCard()
+        => SetCardNameAlpha(0f);
 
     IEnumerator YuyukoTachieMove(float duration)
     {
-    	float amplitude = 7.5f;
+    	float amplitude = 200;
     	for(float t = 0; t < duration; t += Time.deltaTime)
     	{
     		SetTachieY(amplitude * (1 - 2 * t / duration));
@@ -61,28 +54,26 @@ public class CardEffectManager : MonoBehaviour
 
     IEnumerator CardNameAnimation()
     {
-    	float duration1 = 0.2f;
-    	SetCardNameY(-3f);
+    	float duration1 = 0.5f;
+    	SetCardNameY(-294f);
     	for(float t = 0; t < duration1; t += Time.deltaTime)
     	{
-    		SetCardNameZ(-10f + 10f * t / duration1);
+    		SetCardNameScale(1.2f + 2f * (1 - t / duration1));
     		SetCardNameAlpha(t / duration1);
     		yield return 0;
     	}
-    	SetCardNameZ(0f);
+    	SetCardNameScale(1.2f);
     	SetCardNameAlpha(1f);
 
-    	yield return new WaitForSeconds(1f);
+    	yield return new WaitForSeconds(1.7f);
 
-    	float duration2 = 1.5f;
+    	float duration2 = 0.5f;
     	for(float t = 0; t < duration2; t += Time.deltaTime)
     	{
-    		SetCardNameY(-3f + 23f * Mathf.Pow(t / duration2, 2f));
-    		SetCardNameAlpha(1 - t / duration2);
+    		SetCardNameY(-294f * (1 - t / duration2) + 467f * (t / duration2));
     		yield return 0;
     	}
-    	SetCardNameY(20f);
-    	SetCardNameAlpha(0f);
+    	SetCardNameY(467f);
     }
 
     void SetTachieY(float y)
@@ -94,9 +85,16 @@ public class CardEffectManager : MonoBehaviour
 
     void SetTachieAlpha(float alpha)
     {
-    	Color color = yuyukoTachie.GetComponent<SpriteRenderer>().color;
+    	Color color = yuyukoTachie.GetComponent<Image>().color;
     	color.a = alpha;
-    	yuyukoTachie.GetComponent<SpriteRenderer>().color = color;
+    	yuyukoTachie.GetComponent<Image>().color = color;
+    }
+
+    void SetCardNameScale(float scale)
+    {
+        Vector3 localScale = cardName.transform.localScale;
+        localScale.x = localScale.y = scale;
+        cardName.transform.localScale = localScale;
     }
 
     void SetCardNameY(float y)
@@ -106,20 +104,13 @@ public class CardEffectManager : MonoBehaviour
     	cardName.transform.localPosition = position;
     }
 
-    void SetCardNameZ(float z)
-    {
-    	Vector3 position = cardName.transform.localPosition;
-    	position.z = z;
-    	cardName.transform.localPosition = position;
-    }
-
     void SetCardNameAlpha(float alpha)
     {
-    	foreach(TextMesh textMesh in textMeshes)
+    	foreach(Text text in textMeshes)
     	{
-    		Color color = textMesh.color;
+    		Color color = text.color;
 	    	color.a = alpha;
-	    	textMesh.color = color;
+	    	text.color = color;
     	}
     	{
     		Color color = cardNameFrame.color;

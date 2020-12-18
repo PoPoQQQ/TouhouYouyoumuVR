@@ -31,6 +31,7 @@ public class Card6 : MonoBehaviour
         DanmakuManager.ClearDanmaku();
         GetComponent<SaigyoujiYuyuko>().petals2.Stop();
         GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CardEffectManager>().EndCard();
         GetComponent<SaigyoujiYuyuko>().Oogi(false);
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(5);
@@ -68,6 +69,7 @@ public class Card6 : MonoBehaviour
         GetComponent<WhiteScreenManager>().Flash(Color.white, 1f, 0.5f);
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;
+        GetComponent<CardEffectManager>().EndCard();
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<SaigyoujiYuyuko>().Tamashi(false);
         GetComponent<BackgroundManager>().SetBackground(5);

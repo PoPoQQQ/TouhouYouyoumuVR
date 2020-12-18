@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WhiteScreenManager : MonoBehaviour
 {
-    public SpriteRenderer whiteScreen;
+    public Image whiteScreen;
 
     public void Flash(Color color, float outTime, float inTime)
     	=> StartCoroutine(FlashCoroutine(color, outTime, inTime));

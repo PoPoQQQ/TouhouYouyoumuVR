@@ -18,6 +18,8 @@ public class PlayerCollider : MonoBehaviour
     float currAmont;
     float decreaseRate = 0.003f;
 
+    bool invictus = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,24 +55,25 @@ public class PlayerCollider : MonoBehaviour
 
     IEnumerator getDamage()
     {
-        int damageSteps = 50;
-        float stepTime = 0.005f;
-        float fadeTime = 0.005f;
-        float stayTime = 0.05f;
-        for(int i = 0; i < damageSteps; i++)
+        float stepTime = 0.25f;
+        float fadeTime = 1.75f;
+        float stayTime = 1f;
+        invictus = true;
+        for(float t = 0; t < stepTime; t += Time.deltaTime)
         {
-            float currRate = stepTime * i;
+            float currRate = t / stepTime;
             DamageBackground.color = new Color(damageColor.r, damageColor.g, damageColor.b, damageColor.a * currRate);
-            yield return new WaitForSeconds(stepTime);
+            yield return 0;
         }
         yield return new WaitForSeconds(stayTime);
-        for(int i = damageSteps - 1; i >= 0; i--)
+        for(float t = 0; t < fadeTime; t += Time.deltaTime)
         {
-            float currRate = fadeTime * i;
+            float currRate = 1 - t / fadeTime;
             DamageBackground.color = new Color(damageColor.r, damageColor.g, damageColor.b, damageColor.a * currRate);
-            yield return new WaitForSeconds(stepTime);
+            yield return 0;
         }
         DamageBackground.color = Color.clear;
+        invictus = false;
         yield return 0;
     }
 
@@ -79,9 +82,11 @@ public class PlayerCollider : MonoBehaviour
         GameObject obj = collider.gameObject;
         if(obj.tag == "Danmaku")
         {
+            Destroy(obj);
+            if(invictus)
+                return;
             currHp -= 1;
             GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayDamageSE();
-            Destroy(obj);
             if(currHp <= 0)
             {
                 GameObject.Find("GameController").GetComponent<GameController>().OnHPEmpty();

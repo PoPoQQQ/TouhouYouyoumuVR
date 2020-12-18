@@ -23,6 +23,7 @@ public class NonCard3 : MonoBehaviour
         GetComponent<WhiteScreenManager>().Flash(Color.white, 0.5f, 0.5f);
         GetComponent<SaigyoujiYuyuko>().MoveTo(new Vector3(0f, 10f, 100f));
         yield return new WaitForSeconds(0.5f);
+        GetComponent<CardEffectManager>().EndCard();
         GetComponent<SaigyoujiYuyuko>().Ring(false);
         GetComponent<BackgroundManager>().SetBackground(3);
 
