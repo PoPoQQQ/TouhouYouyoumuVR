@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
   - component: {fileID: 5128674333800150962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueBallDanmaku
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349266761
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 8737709964607821755, guid: 6555eed0501787d468516cf9d7fb25be,
     type: 3}

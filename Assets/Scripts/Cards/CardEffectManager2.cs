@@ -10,6 +10,7 @@ public class CardEffectManager2 : MonoBehaviour
 	public GameObject cardName;
 	public Image cardNameFrame;
     public GameObject words;
+    public GameObject allclear;
 
     public void StartCard(string cardName, bool last = false)
     {
@@ -120,9 +121,12 @@ public class CardEffectManager2 : MonoBehaviour
     }
 
     public void WordsAppear()
-        => StartCoroutine(WordsAppearCoroutine());
+        => StartCoroutine(WordsAppearCoroutine(words));
 
-    IEnumerator WordsAppearCoroutine()
+    public void AllClearAppear()
+        => StartCoroutine(WordsAppearCoroutine(allclear));
+
+    IEnumerator WordsAppearCoroutine(GameObject words)
     {
         float duration = 2f;
         float initialX = 10f;

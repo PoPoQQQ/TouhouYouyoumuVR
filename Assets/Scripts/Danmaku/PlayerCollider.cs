@@ -55,9 +55,9 @@ public class PlayerCollider : MonoBehaviour
 
     IEnumerator getDamage()
     {
-        float stepTime = 0.25f;
-        float fadeTime = 1.75f;
-        float stayTime = 1f;
+        float stepTime = 0.1f;
+        float fadeTime = 0.9f;
+        float stayTime = 0.5f;
         invictus = true;
         for(float t = 0; t < stepTime; t += Time.deltaTime)
         {
@@ -65,6 +65,7 @@ public class PlayerCollider : MonoBehaviour
             DamageBackground.color = new Color(damageColor.r, damageColor.g, damageColor.b, damageColor.a * currRate);
             yield return 0;
         }
+        DamageBackground.color = damageColor;
         yield return new WaitForSeconds(stayTime);
         for(float t = 0; t < fadeTime; t += Time.deltaTime)
         {
@@ -91,10 +92,7 @@ public class PlayerCollider : MonoBehaviour
             {
                 GameObject.Find("GameController").GetComponent<GameController>().OnHPEmpty();
             }
-            else
-            {
-                StartCoroutine(getDamage());
-            }
+            StartCoroutine(getDamage());
         }
         //Debug.Log("on collide enter : " + name);
     }

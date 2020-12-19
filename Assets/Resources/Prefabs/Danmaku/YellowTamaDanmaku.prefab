@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
   - component: {fileID: 8505145865538827359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YellowTamaDanmaku
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349266761
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -4154550028494344915, guid: ab5d15089defa5f42b39186b10cdf0d3,
     type: 3}

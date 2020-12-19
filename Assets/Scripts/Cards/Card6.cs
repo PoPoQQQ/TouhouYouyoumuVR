@@ -77,7 +77,16 @@ public class Card6 : MonoBehaviour
         DanmakuManager.ClearDanmaku();
 
         yield return new WaitForSeconds(4f);
-        Destroy(this);
+        GetComponent<CardEffectManager2>().AllClearAppear();
+
+        yield return new WaitForSeconds(5f);
+
+        GameObject.Find("Player").GetComponentInChildren<AudioManager>().FadeOut(4f);
+        yield return new WaitForSeconds(3f);
+        GetComponent<WhiteScreenManager>().Flash(Color.white, 1f, 1e20f);
+        yield return new WaitForSeconds(1.5f);
+        GameObject.Find("Player").GetComponentInChildren<GameController>().ReturnToTitle();
+        
     }
 
     void CreateLasers(int cnt)

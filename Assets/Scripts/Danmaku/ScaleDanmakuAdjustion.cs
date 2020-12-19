@@ -6,6 +6,7 @@ public class ScaleDanmakuAdjustion : MonoBehaviour
 {
 	Camera camera;
     Vector3 lastPosition;
+    Vector3 localPosition;
 
     void Start()
     {
@@ -16,11 +17,8 @@ public class ScaleDanmakuAdjustion : MonoBehaviour
     void LateUpdate()
     {
         Vector3 position = transform.position;
-        //Vector3 deltaPosition = position - lastPosition;
-        Vector3 localPosition = camera.WorldToScreenPoint(position) - camera.WorldToScreenPoint(lastPosition);
-        //if((Vector2)localPosition == Vector2.zero)
-        //	return;
-        //Debug.Log(localPosition);
+        if(position != lastPosition)
+            localPosition = camera.WorldToScreenPoint(position) - camera.WorldToScreenPoint(lastPosition);
         float alpha = Mathf.Atan2(localPosition.y, localPosition.x);
         Vector3 localEulerAngles = transform.localEulerAngles;
         localEulerAngles.z = 90f - alpha * Mathf.Rad2Deg;

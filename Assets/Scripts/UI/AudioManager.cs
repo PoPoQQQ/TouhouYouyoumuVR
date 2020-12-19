@@ -6,8 +6,6 @@ public class AudioManager : MonoBehaviour
 {
 	public AudioClip BGM;
     public AudioClip BGM2;
-
-    public AudioClip StartBGM;
     
 	public AudioClip cardSE;
 
@@ -56,14 +54,31 @@ public class AudioManager : MonoBehaviour
         bgm.Play();
     }
 
-    public void PlayStartBGM()
+    public void PauseBGM()
     {
-        Debug.Log("play start BGM");
-        bgm = gameObject.AddComponent<AudioSource>();
-        bgm.clip = StartBGM;
-        bgm.loop = true;
-        bgm.volume = 1f;
+        if(bgm == null)
+            return;
+        bgm.Pause();
+    }
+
+    public void ResumeBGM()
+    {
+        if(bgm == null)
+            return;
         bgm.Play();
+    }
+
+    public void FadeOut(float duration)
+        => StartCoroutine(FadeOutCoroutine(duration));
+
+    IEnumerator FadeOutCoroutine(float duration)
+    {
+        for(float t = 0; t < duration; t += Time.deltaTime)
+        {
+            bgm.volume = 1 - t / duration;
+            yield return 0;
+        }
+        bgm.volume = 0;
     }
 
 	public float BGMTime()

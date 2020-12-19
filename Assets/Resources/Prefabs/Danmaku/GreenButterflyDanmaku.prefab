@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
   - component: {fileID: 7000569925742240132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GreenButterflyDanmaku
   m_TagString: Danmaku
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349266761
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 2241881372615542437, guid: a0ad55b479186934b80894e4ad43a8da,
     type: 3}

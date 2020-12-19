@@ -12,33 +12,76 @@ public class GameController : MonoBehaviour
     public GameObject UICanvas;
 
     List<GameObject> hideObjs;
+    DigitDisplay digitDisplay;
 
-    int deathCount = 0;
+    bool flag = false;
+    public Text[] texts;
+    bool dead = false;
+
     void Start()
     {
         UICanvas.SetActive(false);
+        digitDisplay = GameObject.Find("DigitDisplay").GetComponent<DigitDisplay>();
+        StartCoroutine(UpdateCoroutine());
+    }
+
+    IEnumerator UpdateCoroutine()
+    {
+        while(true)
+        {
+            if(flag || Time.timeScale == 0)
+            {
+                flag = false;
+                yield return 0;
+                continue;
+            }
+            if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
+            {
+                OnPause();
+            }
+            yield return 0;
+        }
+    }
+
+    public void OnPause()
+    {
+        foreach(Text text in texts)
+            text.text = "一時停止";
+        UICanvas.SetActive(true);
+        Time.timeScale = 0;
+        hideObjs = new List<GameObject>();
+        hideObjs.Add(GameObject.Find("判定区1"));
+        GameObject.Find("判定区1").SetActive(false);
+        hideObjs.Add(GameObject.Find("判定区2"));
+        GameObject.Find("判定区2").SetActive(false);
+        hideObjs.Add(GameObject.Find("判定区3"));
+        GameObject.Find("判定区3").SetActive(false);
+        //hideObjs.Add(GameObject.Find("ScoreCanvas"));
+        //GameObject.Find("ScoreCanvas").SetActive(false);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PauseBGM();
+        dead = false;
     }
 
     public void OnHPEmpty()
     {
+        foreach(Text text in texts)
+            text.text = "満身創痍";
         UICanvas.SetActive(true);
         Time.timeScale = 0;
         hideObjs = new List<GameObject>();
 
-        hideObjs.Add(GameObject.Find("判定区"));
-        GameObject.Find("判定区").SetActive(false);
-        hideObjs.Add(GameObject.Find("ScoreCanvas"));
-        GameObject.Find("ScoreCanvas").SetActive(false);
+        hideObjs.Add(GameObject.Find("判定区1"));
+        GameObject.Find("判定区1").SetActive(false);
+        hideObjs.Add(GameObject.Find("判定区2"));
+        GameObject.Find("判定区2").SetActive(false);
+        hideObjs.Add(GameObject.Find("判定区3"));
+        GameObject.Find("判定区3").SetActive(false);
+        //hideObjs.Add(GameObject.Find("ScoreCanvas"));
+        //GameObject.Find("ScoreCanvas").SetActive(false);
+        dead = true;
         GlobalInfo.deathCount += 1;
 
-        GameObject[] danmakus = GameObject.FindGameObjectsWithTag("Danmaku");
-        foreach(GameObject obj in danmakus)
-        {
-            //obj.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
-            //hideObjs.Add(obj);
-            obj.SetActive(false);
-        }
-        GameObject.Find("AudioManager").GetComponent<AudioSource>().Pause();
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PauseBGM();
     }
 
     public void BackToGame()
@@ -51,43 +94,22 @@ public class GameController : MonoBehaviour
             if(obj != null)
                 obj.SetActive(true);
         }
-        GameObject.Find("DigitDisplay").GetComponent<DigitDisplay>().displaynumber = GlobalInfo.deathCount;
-        GameObject.Find("HitArea").GetComponent<PlayerCollider>().ResetHp();
-        GameObject.Find("AudioManager").GetComponent<AudioSource>().Play();
+        if(dead)
+        {
+            digitDisplay.displaynumber = GlobalInfo.deathCount;
+            GameObject.Find("HitArea").GetComponent<PlayerCollider>().ResetHp();
+        }
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().ResumeBGM();
+        flag = true;
     }
 
     public void ReturnToTitle()
     {
         Time.timeScale = 1;
-        foreach(GameObject obj in hideObjs)
-        {
-            if(obj != null)
-                obj.SetActive(true);
-        }
-        int score = GameObject.Find("DigitDisplay").GetComponent<DigitDisplay>().displaynumber;
+        int score = digitDisplay.displaynumber;
         GlobalInfo.ReportScore(score);
+        GlobalInfo.deathCount = 0;
         SceneManager.LoadScene("ResultMenu");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if(Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            if(!pause)
-            {
-                pause = true;
-                Time.timeScale = 0;
-            }
-            else
-            {
-                pause = false;
-                Time.timeScale = 1;
-            }
-        }*/
-        /*if(pause)
-            Time.timeScale = 0;
-        else
-            Time.timeScale = 1;*/
+        flag = true;
     }
 }

@@ -21,10 +21,10 @@ public class UISelecter : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayStartBGM();
-        camera = GameObject.Find("LeftEye").transform;
+        camera = GameObject.Find("Player").GetComponentInChildren<Camera>().transform;
         loading.SetActive(false);
         magicCircle.SetActive(false);
+        StartCoroutine(UpdateCoroutine());
     }
 
     IEnumerator LoadSampleScene()
@@ -41,50 +41,56 @@ public class UISelecter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator UpdateCoroutine()
     {
-        RaycastHit hit;
-        start.GetComponent<UISelectBehavior>().isSelecting = false;
-        option.GetComponent<UISelectBehavior>().isSelecting = false;
-        result.GetComponent<UISelectBehavior>().isSelecting = false;
-        if(Physics.Raycast(camera.position, camera.forward, out hit))
-        {
-            GameObject obj = hit.collider.gameObject;
-            Debug.Log("hit object : " +  obj.name);
-            if(obj.name == "Background")
-            {
-                /*background.GetComponent<ChangeColor>().change = true;
-                if(Input.touchCount == 1)
-                {
-                    background.GetComponent<ChangeColor>().change = false;
-                    //SceneManager.LoadScene("SampleScene");
-                }*/
-            }
-            else if(obj.name == "Start")
-            {
-                start.GetComponent<UISelectBehavior>().isSelecting = true;
-                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
-                {
-                    StartCoroutine(LoadSampleScene());
-                    //SceneManager.LoadScene("SampleScene");
-                }
-            }
-            else if(obj.name == "Option")
-            {
-                option.GetComponent<UISelectBehavior>().isSelecting = true;
-                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
-                {
-                    SceneManager.LoadScene("OptionMenu");
-                }
-            }
-            else if(obj.name == "Result")
-            {
-                result.GetComponent<UISelectBehavior>().isSelecting = true;
-                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
-                {
-                    SceneManager.LoadScene("ResultMenu");
-                }
-            }
-        }
+    	while(true)
+    	{
+    		RaycastHit hit;
+	        start.GetComponent<UISelectBehavior>().isSelecting = false;
+	        option.GetComponent<UISelectBehavior>().isSelecting = false;
+	        result.GetComponent<UISelectBehavior>().isSelecting = false;
+	        if(Physics.Raycast(camera.position, camera.forward, out hit))
+	        {
+	            GameObject obj = hit.collider.gameObject;
+	            Debug.Log("hit object : " +  obj.name);
+	            if(obj.name == "Background")
+	            {
+	                /*background.GetComponent<ChangeColor>().change = true;
+	                if(Input.touchCount == 1)
+	                {
+	                    background.GetComponent<ChangeColor>().change = false;
+	                    //SceneManager.LoadScene("SampleScene");
+	                }*/
+	            }
+	            else if(obj.name == "Start")
+	            {
+	                start.GetComponent<UISelectBehavior>().isSelecting = true;
+	                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
+	                {
+	                    StartCoroutine(LoadSampleScene());
+	                    //SceneManager.LoadScene("SampleScene");
+	                }
+	            }
+	            else if(obj.name == "Option")
+	            {
+	                option.GetComponent<UISelectBehavior>().isSelecting = true;
+	                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
+	                {
+	                	yield return 0;
+	                    SceneManager.LoadScene("OptionMenu");
+	                }
+	            }
+	            else if(obj.name == "Result")
+	            {
+	                result.GetComponent<UISelectBehavior>().isSelecting = true;
+	                if((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
+	                {
+	                	yield return 0;
+	                    SceneManager.LoadScene("ResultMenu");
+	                }
+	            }
+	        }
+	        yield return 0;
+    	}
     }
 }

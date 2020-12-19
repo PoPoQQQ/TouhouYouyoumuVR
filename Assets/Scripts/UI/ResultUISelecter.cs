@@ -15,8 +15,7 @@ public class ResultUISelecter : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("Player").GetComponentInChildren<AudioManager>().PlayStartBGM();
-        camera = GameObject.Find("LeftEye").transform;
+        camera = GameObject.Find("Player").GetComponentInChildren<Camera>().transform;
     }
 
     // Update is called once per frame

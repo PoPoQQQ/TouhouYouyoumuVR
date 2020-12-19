@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7671627863268359031}
   - component: {fileID: 5004982027166417929}
   - component: {fileID: 5817336106637054523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueTamaDanmaku
   m_TagString: Danmaku
   m_Icon: {fileID: 0}

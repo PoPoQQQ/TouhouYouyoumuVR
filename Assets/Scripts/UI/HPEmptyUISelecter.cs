@@ -24,7 +24,7 @@ public class HPEmptyUISelecter : MonoBehaviour
         RaycastHit hit;
         ReturnToTitle.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
         BackToGame.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
-        if(Physics.Raycast(camera.position, camera.forward, out hit))
+        if(Physics.Raycast(camera.position, camera.forward, out hit, Mathf.Infinity, 1))
         {
             GameObject obj = hit.collider.gameObject;
             Debug.Log("hit object : " +  obj.name);
