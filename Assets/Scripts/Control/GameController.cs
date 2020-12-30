@@ -56,6 +56,8 @@ public class GameController : MonoBehaviour
         GameObject.Find("判定区2").SetActive(false);
         hideObjs.Add(GameObject.Find("判定区3"));
         GameObject.Find("判定区3").SetActive(false);
+        hideObjs.Add(GameObject.Find("UI Position"));
+        GameObject.Find("UI Position").SetActive(false);
         //hideObjs.Add(GameObject.Find("ScoreCanvas"));
         //GameObject.Find("ScoreCanvas").SetActive(false);
         GameObject.Find("AudioManager").GetComponent<AudioManager>().PauseBGM();
@@ -76,6 +78,8 @@ public class GameController : MonoBehaviour
         GameObject.Find("判定区2").SetActive(false);
         hideObjs.Add(GameObject.Find("判定区3"));
         GameObject.Find("判定区3").SetActive(false);
+        hideObjs.Add(GameObject.Find("UI Position"));
+        GameObject.Find("UI Position").SetActive(false);
         //hideObjs.Add(GameObject.Find("ScoreCanvas"));
         //GameObject.Find("ScoreCanvas").SetActive(false);
         dead = true;

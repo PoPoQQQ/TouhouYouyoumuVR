@@ -16,8 +16,8 @@ public class ScoreDisplay : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(camera);
+        //transform.LookAt(camera);
         //transform.position = camera.position + relative_position;
-        transform.Rotate(0, 180, 0);
+        //transform.Rotate(0, 180, 0);
     }
 }
