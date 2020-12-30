@@ -24,6 +24,8 @@ public class SineWaveDanmaku : MonoBehaviour
 
     void Update()
     {
+    	if(Time.deltaTime == 0)
+    		return;
     	float deltaZ = speed * Time.deltaTime;
     	range += deltaZ;
     	if(range * 0.2f > Mathf.PI * 3.5f)
